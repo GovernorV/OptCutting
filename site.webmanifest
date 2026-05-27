@@ -1,0 +1,19 @@
+{
+  "name": "Раскройщик OptCutting",
+  "short_name": "OptCutting",
+  "description": "Windows-программа для оптимизации раскроя полотна гофрокартона.",
+  "lang": "ru",
+  "start_url": "https://governorv.github.io/OptCutting/",
+  "scope": "https://governorv.github.io/OptCutting/",
+  "display": "standalone",
+  "background_color": "#07111e",
+  "theme_color": "#07111e",
+  "icons": [
+    {
+      "src": "assets/app-icon.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

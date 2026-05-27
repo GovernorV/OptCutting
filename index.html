@@ -4,17 +4,142 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Раскройщик OptCutting — оптимизация раскроя полотна гофрокартона</title>
-  <meta name="description" content="Раскройщик OptCutting: Windows-программа для оптимизации раскроя полотна гофрокартона, учета сроков, ППР, совместимости марок и формирования Excel-отчетов.">
+  <meta name="description" content="Раскройщик OptCutting: Windows-программа для оптимизации раскроя полотна гофрокартона, снижения отходов, учета сроков, ППР, совместимости марок и формирования Excel-отчетов.">
+  <meta name="keywords" content="раскройщик, OptCutting, раскрой гофрокартона, оптимизация раскроя, раскрой полотна, гофроагрегат, карты раскроя, сетевой график, деловой отход, MS SQL Server, Excel отчеты">
   <meta name="author" content="Viktor Guberniev">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="application-name" content="OptCutting">
+  <meta name="theme-color" content="#07111e">
+  <meta name="color-scheme" content="light dark">
   <link rel="canonical" href="https://governorv.github.io/OptCutting/">
+  <link rel="alternate" hreflang="ru" href="https://governorv.github.io/OptCutting/">
+  <link rel="alternate" hreflang="en" href="https://governorv.github.io/OptCutting/?lang=en">
+  <link rel="alternate" hreflang="x-default" href="https://governorv.github.io/OptCutting/">
+  <link rel="icon" type="image/png" href="https://governorv.github.io/OptCutting/assets/app-icon.png">
+  <link rel="apple-touch-icon" href="https://governorv.github.io/OptCutting/assets/app-icon.png">
+  <link rel="manifest" href="https://governorv.github.io/OptCutting/site.webmanifest">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="PackTuning Software">
-  <meta property="og:title" content="Раскройщик OptCutting">
-  <meta property="og:description" content="Оптимизация раскроя полотна гофрокартона для гофропроизводства.">
-  <meta property="og:image" content="https://governorv.github.io/OptCutting/assets/cutting.jpg">
+  <meta property="og:title" content="Раскройщик OptCutting — оптимизация раскроя гофрокартона">
+  <meta property="og:description" content="Планирование раскроя полотна гофрокартона с учетом сроков, ППР, подкроя, совместимости марок, отходов и Excel-отчетов.">
+  <meta property="og:url" content="https://governorv.github.io/OptCutting/">
+  <meta property="og:image" content="https://governorv.github.io/OptCutting/assets/social-card.png">
+  <meta property="og:image:width" content="800">
+  <meta property="og:image:height" content="600">
+  <meta property="og:image:alt" content="Раскройщик OptCutting: программа для оптимизации раскроя полотна гофрокартона">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Раскройщик OptCutting — оптимизация раскроя гофрокартона">
+  <meta name="twitter:description" content="Windows-программа для раскроя полотна гофрокартона, снижения отходов, контроля сроков и формирования Excel-отчетов.">
+  <meta name="twitter:image" content="https://governorv.github.io/OptCutting/assets/social-card.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://governorv.github.io/#organization",
+        "name": "PackTuning Software",
+        "url": "https://governorv.github.io/ProgramCatalog/",
+        "email": "vguberniev@gmail.com"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://governorv.github.io/OptCutting/#website",
+        "url": "https://governorv.github.io/OptCutting/",
+        "name": "Раскройщик OptCutting",
+        "inLanguage": ["ru-RU", "en-US"],
+        "publisher": { "@id": "https://governorv.github.io/#organization" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://governorv.github.io/OptCutting/#software",
+        "name": "Раскройщик OptCutting",
+        "alternateName": "OptCutting",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Windows",
+        "softwareVersion": "0.54.0",
+        "url": "https://governorv.github.io/OptCutting/",
+        "downloadUrl": "https://disk.yandex.ru/d/QvA8G1ypPv7D9Q",
+        "image": "https://governorv.github.io/OptCutting/assets/social-card.png",
+        "screenshot": [
+          "https://governorv.github.io/OptCutting/assets/screen-main.png",
+          "https://governorv.github.io/OptCutting/assets/screen-params.png",
+          "https://governorv.github.io/OptCutting/assets/report-cutting.png"
+        ],
+        "description": "Windows-программа для оптимизации раскроя полотна гофрокартона: заказы, сроки, ППР, подкрой, совместимость марок, карты раскроя и Excel-отчеты.",
+        "featureList": [
+          "Оптимизация раскроя полотна гофрокартона",
+          "Расчет карт раскроя и подкроя",
+          "Учет сроков, рабочего календаря и ППР",
+          "Совместимость марок картона и расчет повышения марки",
+          "Диаграмма Ганта работы гофроагрегата",
+          "Ведомость потребности в картоне",
+          "Импорт и экспорт Excel",
+          "Работа с MS SQL Server в рабочей версии"
+        ],
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Бессрочная лицензия OptCutting",
+            "price": "99000",
+            "priceCurrency": "RUB",
+            "availability": "https://schema.org/InStock",
+            "url": "https://governorv.github.io/OptCutting/#pricing"
+          },
+          {
+            "@type": "Offer",
+            "name": "Аренда OptCutting на 1 год",
+            "price": "24900",
+            "priceCurrency": "RUB",
+            "availability": "https://schema.org/InStock",
+            "url": "https://governorv.github.io/OptCutting/#pricing"
+          },
+          {
+            "@type": "Offer",
+            "name": "Аренда OptCutting на 1 месяц",
+            "price": "2490",
+            "priceCurrency": "RUB",
+            "availability": "https://schema.org/InStock",
+            "url": "https://governorv.github.io/OptCutting/#pricing"
+          }
+        ],
+        "publisher": { "@id": "https://governorv.github.io/#organization" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://governorv.github.io/OptCutting/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Для чего нужна программа OptCutting?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "OptCutting строит оптимальный раскрой заготовок гофроящиков на полотне гофрокартона с учетом отходов, сроков, ППР, подкроя и совместимости марок."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Нужен ли SQL Server для демоверсии?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Демоверсия не требует SQL Server: она автоматически создает пример заказов. Рабочая версия может хранить данные в MS SQL Server."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Какие отчеты формирует программа?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Программа формирует Excel-отчет по раскроям, сетевой график в виде диаграммы Ганта и ведомость потребности в картоне."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
   <style>
     :root {
       color-scheme: light dark;
@@ -320,6 +445,11 @@
       gap: 18px;
     }
     .report-grid .screen { height: 100%; }
+    .faq {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
     .cta {
       background: linear-gradient(90deg, rgba(2, 9, 18, .92), rgba(2, 9, 18, .66)), url("assets/cutting.jpg") center / cover no-repeat;
       color: #f7fbff;
@@ -336,14 +466,14 @@
 
     @media (max-width: 980px) {
       .section-head, .showcase, .grid.two { grid-template-columns: 1fr; }
-      .grid, .pricing, .report-grid, .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .grid, .pricing, .report-grid, .steps, .faq { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       nav a { display: none; }
     }
     @media (max-width: 650px) {
       .wrap { width: min(100% - 28px, 1180px); }
       .topbar-inner { height: auto; padding: 10px 0; align-items: flex-start; }
       .brand span { white-space: normal; }
-      .grid, .pricing, .report-grid, .steps { grid-template-columns: 1fr; }
+      .grid, .pricing, .report-grid, .steps, .faq { grid-template-columns: 1fr; }
       .hero { min-height: 70vh; padding-top: 86px; }
       .btn { width: 100%; white-space: normal; text-align: center; }
     }
@@ -353,7 +483,7 @@
   <header class="topbar">
     <div class="wrap topbar-inner">
       <a class="brand" href="#top" aria-label="OptCutting">
-        <img src="assets/app-icon.png" alt="">
+        <img src="assets/app-icon.png" alt="Логотип OptCutting">
         <span>
           <strong>OptCutting</strong>
           <span data-i18n="brandSub">Раскройщик гофрокартона</span>
@@ -422,7 +552,7 @@
     <section id="features">
       <div class="wrap showcase">
         <div class="screen">
-          <img src="assets/screen-main.png" alt="OptCutting main window" loading="lazy">
+          <img src="assets/screen-main.png" alt="Главное окно программы OptCutting для раскроя полотна гофрокартона" loading="lazy">
           <div class="caption" data-i18n="mainCaption">Главное окно: заказы, карта раскроя, сводка и серии.</div>
         </div>
         <div>
@@ -464,7 +594,7 @@
           </div>
         </div>
         <div class="screen">
-          <img src="assets/screen-params.png" alt="OptCutting calculation parameters" loading="lazy">
+          <img src="assets/screen-params.png" alt="Параметры расчета раскроя в программе OptCutting" loading="lazy">
           <div class="caption" data-i18n="paramsCaption">Окно параметров расчета.</div>
         </div>
       </div>
@@ -477,15 +607,15 @@
       </div>
       <div class="wrap report-grid">
         <div class="screen">
-          <img src="assets/report-cutting.png" alt="Cutting report" loading="lazy">
+          <img src="assets/report-cutting.png" alt="Excel-отчет OptCutting по раскроям гофрокартона" loading="lazy">
           <div class="caption" data-i18n="report1">Раскрои: серии, заказы, полотна, примечания.</div>
         </div>
         <div class="screen">
-          <img src="assets/report-gantt.png" alt="Gantt schedule report" loading="lazy">
+          <img src="assets/report-gantt.png" alt="Сетевой график OptCutting в виде диаграммы Ганта" loading="lazy">
           <div class="caption" data-i18n="report2">Сетевой график: диаграмма Ганта работы гофроагрегата.</div>
         </div>
         <div class="screen">
-          <img src="assets/report-materials.png" alt="Material requirement report" loading="lazy">
+          <img src="assets/report-materials.png" alt="Ведомость потребности в картоне из программы OptCutting" loading="lazy">
           <div class="caption" data-i18n="report3">Потребность: марки картона, отход, деловой отход, стоимость.</div>
         </div>
       </div>
@@ -521,6 +651,27 @@
       </div>
       <div class="wrap note">
         <p data-i18n="customText">Доработки, специальные отчеты, перенос данных и интеграции оцениваются отдельно. Для первых клиентов установка и настройка могут быть включены в пилотное внедрение.</p>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap section-head">
+        <h2 data-i18n="faqTitle">Вопросы по внедрению</h2>
+        <p data-i18n="faqIntro">Коротко о том, как начать проверку программы на реальных задачах гофропроизводства.</p>
+      </div>
+      <div class="wrap faq">
+        <div class="card">
+          <h3 data-i18n="faq1Title">Для чего нужна программа?</h3>
+          <p data-i18n="faq1Text">OptCutting строит оптимальный раскрой заготовок гофроящиков на полотне гофрокартона с учетом отходов, сроков, ППР, подкроя и совместимости марок.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="faq2Title">Нужен ли SQL Server для демо?</h3>
+          <p data-i18n="faq2Text">Демоверсия не требует SQL Server: она автоматически создает пример заказов. Рабочая версия подключается к базе и реальным данным предприятия.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="faq3Title">Какие отчеты формируются?</h3>
+          <p data-i18n="faq3Text">Excel-отчет по раскроям, сетевой график в виде диаграммы Ганта и ведомость потребности в картоне с отходом, деловым отходом и стоимостью.</p>
+        </div>
       </div>
     </section>
 
@@ -611,6 +762,14 @@
           priceMonth: "2 490 ₽",
           priceMonthText: "Минимальный вход, чтобы проверить программу на своих заказах.",
           customText: "Доработки, специальные отчеты, перенос данных и интеграции оцениваются отдельно. Для первых клиентов установка и настройка могут быть включены в пилотное внедрение.",
+          faqTitle: "Вопросы по внедрению",
+          faqIntro: "Коротко о том, как начать проверку программы на реальных задачах гофропроизводства.",
+          faq1Title: "Для чего нужна программа?",
+          faq1Text: "OptCutting строит оптимальный раскрой заготовок гофроящиков на полотне гофрокартона с учетом отходов, сроков, ППР, подкроя и совместимости марок.",
+          faq2Title: "Нужен ли SQL Server для демо?",
+          faq2Text: "Демоверсия не требует SQL Server: она автоматически создает пример заказов. Рабочая версия подключается к базе и реальным данным предприятия.",
+          faq3Title: "Какие отчеты формируются?",
+          faq3Text: "Excel-отчет по раскроям, сетевой график в виде диаграммы Ганта и ведомость потребности в картоне с отходом, деловым отходом и стоимостью.",
           ctaTitle: "Начните с демоверсии",
           ctaText: "Демоверсия не требует SQL Server: она автоматически создает пример заказов и позволяет посмотреть интерфейс, карты раскроя и отчеты. Рабочая версия подключается к базе и реальным данным предприятия.",
           downloadDemo2: "Скачать демоверсию",
@@ -677,6 +836,14 @@
           priceMonth: "2,490 RUB",
           priceMonthText: "A low entry point to test the software on your own orders.",
           customText: "Custom development, special reports, data migration and integrations are estimated separately. For first customers, installation and setup can be included in the pilot deployment.",
+          faqTitle: "Implementation questions",
+          faqIntro: "A short guide to starting a pilot on real corrugated production tasks.",
+          faq1Title: "What is the software for?",
+          faq1Text: "OptCutting builds optimal corrugated board cutting plans with waste, due dates, maintenance windows, nested cuts and board grade compatibility.",
+          faq2Title: "Is SQL Server required for the demo?",
+          faq2Text: "The demo does not require SQL Server: it creates sample orders automatically. The full version connects to the database and real plant data.",
+          faq3Title: "Which reports are available?",
+          faq3Text: "Excel cutting reports, a Gantt schedule and a material demand report with waste, reusable waste and cost.",
           ctaTitle: "Start with the demo",
           ctaText: "The demo does not require SQL Server: it creates sample orders automatically and lets you review the interface, cutting maps and reports. The full version connects to the database and real plant data.",
           downloadDemo2: "Download demo",
@@ -691,8 +858,20 @@
         en: "OptCutting — corrugated board cutting optimization"
       };
       const descText = {
-        ru: "Windows-программа для оптимизации раскроя полотна гофрокартона, учета сроков, ППР, совместимости марок и формирования Excel-отчетов.",
+        ru: "Windows-программа для оптимизации раскроя полотна гофрокартона, снижения отходов, учета сроков, ППР, совместимости марок и формирования Excel-отчетов.",
         en: "Windows software for corrugated web cutting optimization with due dates, maintenance windows, board grade compatibility and Excel reports."
+      };
+      const ogText = {
+        ru: {
+          title: "Раскройщик OptCutting — оптимизация раскроя гофрокартона",
+          desc: "Планирование раскроя полотна гофрокартона с учетом сроков, ППР, подкроя, совместимости марок, отходов и Excel-отчетов.",
+          url: "https://governorv.github.io/OptCutting/"
+        },
+        en: {
+          title: "OptCutting — corrugated board cutting optimization",
+          desc: "Corrugated web cutting planning with due dates, maintenance windows, nested cuts, board grade compatibility, waste control and Excel reports.",
+          url: "https://governorv.github.io/OptCutting/?lang=en"
+        }
       };
 
       const nodes = Array.from(document.querySelectorAll("[data-i18n]"));
@@ -706,6 +885,12 @@
         document.documentElement.lang = next;
         document.title = titleText[next];
         document.querySelector("meta[name='description']").setAttribute("content", descText[next]);
+        document.querySelector("link[rel='canonical']").setAttribute("href", ogText[next].url);
+        document.querySelector("meta[property='og:title']").setAttribute("content", ogText[next].title);
+        document.querySelector("meta[property='og:description']").setAttribute("content", ogText[next].desc);
+        document.querySelector("meta[property='og:url']").setAttribute("content", ogText[next].url);
+        document.querySelector("meta[name='twitter:title']").setAttribute("content", ogText[next].title);
+        document.querySelector("meta[name='twitter:description']").setAttribute("content", ogText[next].desc);
         nodes.forEach((node) => {
           const key = node.dataset.i18n;
           if (text[next][key]) node.textContent = text[next][key];
@@ -713,8 +898,12 @@
         btnRu.classList.toggle("active", next === RU);
         btnEn.classList.toggle("active", next === EN);
         try { localStorage.setItem("optcutting-lang", next); } catch (e) {}
-        const hash = location.hash.toLowerCase();
-        if (hash === "#ru" || hash === "#en" || hash === "") history.replaceState(null, "", "#" + next);
+        const url = new URL(location.href);
+        if (next === EN) url.searchParams.set("lang", EN);
+        else url.searchParams.delete("lang");
+        const currentHash = location.hash.toLowerCase();
+        url.hash = currentHash === "#ru" || currentHash === "#en" ? "" : location.hash;
+        history.replaceState(null, "", url);
       }
 
       function setTheme(theme) {
@@ -726,6 +915,9 @@
       }
 
       function initialLang() {
+        const queryLang = new URLSearchParams(location.search).get("lang");
+        if (queryLang === EN) return EN;
+        if (queryLang === RU) return RU;
         const hash = location.hash.toLowerCase();
         if (hash === "#en") return EN;
         if (hash === "#ru") return RU;
