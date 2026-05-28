@@ -451,6 +451,34 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
     }
+    .other-products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .other-product-card {
+      padding: 0;
+      overflow: hidden;
+    }
+    .other-product-card a:first-child {
+      display: block;
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+    }
+    .other-product-card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+    .other-product-body {
+      padding: 18px;
+    }
+    .other-product-body .btn {
+      margin-top: 14px;
+      min-height: 40px;
+      padding: 9px 14px;
+      border-radius: 10px;
+    }
     .cta {
       background: linear-gradient(90deg, rgba(2, 9, 18, .92), rgba(2, 9, 18, .66)), url("assets/cutting.jpg") center / cover no-repeat;
       color: #f7fbff;
@@ -467,14 +495,14 @@
 
     @media (max-width: 980px) {
       .section-head, .showcase, .grid.two { grid-template-columns: 1fr; }
-      .grid, .pricing, .report-grid, .steps, .faq { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .grid, .pricing, .report-grid, .steps, .faq, .other-products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       nav a { display: none; }
     }
     @media (max-width: 650px) {
       .wrap { width: min(100% - 28px, 1180px); }
       .topbar-inner { height: auto; padding: 10px 0; align-items: flex-start; }
       .brand span { white-space: normal; }
-      .grid, .pricing, .report-grid, .steps, .faq { grid-template-columns: 1fr; }
+      .grid, .pricing, .report-grid, .steps, .faq, .other-products-grid { grid-template-columns: 1fr; }
       .hero { min-height: 70vh; padding-top: 86px; }
       .btn { width: 100%; white-space: normal; text-align: center; }
     }
@@ -676,6 +704,55 @@
       </div>
     </section>
 
+    <section id="other-programs">
+      <div class="wrap section-head">
+        <h2 data-i18n="otherTitle">Посмотрите другие мои программы</h2>
+        <p data-i18n="otherIntro">Инструменты для упаковочного производства, логистики, учета лицензий и поиска по базам данных.</p>
+      </div>
+      <div class="wrap other-products-grid">
+        <article class="card other-product-card">
+          <a href="https://governorv.github.io/BoxPriceCalculator/#ru" data-ru-href="https://governorv.github.io/BoxPriceCalculator/#ru" data-en-href="https://governorv.github.io/BoxPriceCalculator/#en" target="_blank" rel="noopener">
+            <img src="assets/cross/boxprice_banner.png" data-ru-src="assets/cross/boxprice_banner.png" data-en-src="assets/cross/boxprice_banner_en.png" alt="Калькулятор стоимости гофроящика" loading="lazy">
+          </a>
+          <div class="other-product-body">
+            <h3 data-i18n="otherBoxPriceTitle">Калькулятор стоимости гофроящика</h3>
+            <p data-i18n="otherBoxPriceText">Расчет себестоимости гофроупаковки с учетом материалов, печати и дополнительных расходов.</p>
+            <a class="btn light" href="https://governorv.github.io/BoxPriceCalculator/#ru" data-ru-href="https://governorv.github.io/BoxPriceCalculator/#ru" data-en-href="https://governorv.github.io/BoxPriceCalculator/#en" target="_blank" rel="noopener" data-i18n="otherPage">Страница</a>
+          </div>
+        </article>
+        <article class="card other-product-card">
+          <a href="https://governorv.github.io/DBSearch/#ru" data-ru-href="https://governorv.github.io/DBSearch/#ru" data-en-href="https://governorv.github.io/DBSearch/#en" target="_blank" rel="noopener">
+            <img src="assets/cross/dbsearch_banner.png" data-ru-src="assets/cross/dbsearch_banner.png" data-en-src="assets/cross/dbsearch_banner_en.png" alt="Поиск по базе данных" loading="lazy">
+          </a>
+          <div class="other-product-body">
+            <h3 data-i18n="otherDbTitle">Поиск по базе данных</h3>
+            <p data-i18n="otherDbText">Поиск объектов и данных в SQL Server, просмотр кода, фильтры и экспорт результатов.</p>
+            <a class="btn light" href="https://governorv.github.io/DBSearch/#ru" data-ru-href="https://governorv.github.io/DBSearch/#ru" data-en-href="https://governorv.github.io/DBSearch/#en" target="_blank" rel="noopener" data-i18n="otherPage">Страница</a>
+          </div>
+        </article>
+        <article class="card other-product-card">
+          <a href="https://governorv.github.io/Licman/#ru" data-ru-href="https://governorv.github.io/Licman/#ru" data-en-href="https://governorv.github.io/Licman/#en" target="_blank" rel="noopener">
+            <img src="assets/cross/licman_banner.png" data-ru-src="assets/cross/licman_banner.png" data-en-src="assets/cross/licman_banner_en.png" alt="Менеджер лицензий" loading="lazy">
+          </a>
+          <div class="other-product-body">
+            <h3 data-i18n="otherLicTitle">Менеджер лицензий</h3>
+            <p data-i18n="otherLicText">Учет лицензий, контроль сроков действия, ответственные, уведомления и экспорт в Excel.</p>
+            <a class="btn light" href="https://governorv.github.io/Licman/#ru" data-ru-href="https://governorv.github.io/Licman/#ru" data-en-href="https://governorv.github.io/Licman/#en" target="_blank" rel="noopener" data-i18n="otherPage">Страница</a>
+          </div>
+        </article>
+        <article class="card other-product-card">
+          <a href="https://governorv.github.io/BoxPalletizer/#ru" data-ru-href="https://governorv.github.io/BoxPalletizer/#ru" data-en-href="https://governorv.github.io/BoxPalletizer/#en" target="_blank" rel="noopener">
+            <img src="assets/cross/palletizer_banner.png" data-ru-src="assets/cross/palletizer_banner.png" data-en-src="assets/cross/palletizer_banner_en.png" alt="Паллетировщик" loading="lazy">
+          </a>
+          <div class="other-product-body">
+            <h3 data-i18n="otherPalletTitle">Паллетировщик</h3>
+            <p data-i18n="otherPalletText">Расчет укладки коробов на поддон, 3D-визуализация, ограничения и отчеты.</p>
+            <a class="btn light" href="https://governorv.github.io/BoxPalletizer/#ru" data-ru-href="https://governorv.github.io/BoxPalletizer/#ru" data-en-href="https://governorv.github.io/BoxPalletizer/#en" target="_blank" rel="noopener" data-i18n="otherPage">Страница</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section class="cta">
       <div class="wrap">
         <h2 data-i18n="ctaTitle">Начните с демоверсии</h2>
@@ -771,6 +848,17 @@
           faq2Text: "Демоверсия не требует SQL Server: она автоматически создает пример заказов. Рабочая версия подключается к базе и реальным данным предприятия.",
           faq3Title: "Какие отчеты формируются?",
           faq3Text: "Excel-отчет по раскроям, сетевой график в виде диаграммы Ганта и ведомость потребности в картоне с отходом, деловым отходом и стоимостью.",
+          otherTitle: "Посмотрите другие мои программы",
+          otherIntro: "Инструменты для упаковочного производства, логистики, учета лицензий и поиска по базам данных.",
+          otherBoxPriceTitle: "Калькулятор стоимости гофроящика",
+          otherBoxPriceText: "Расчет себестоимости гофроупаковки с учетом материалов, печати и дополнительных расходов.",
+          otherDbTitle: "Поиск по базе данных",
+          otherDbText: "Поиск объектов и данных в SQL Server, просмотр кода, фильтры и экспорт результатов.",
+          otherLicTitle: "Менеджер лицензий",
+          otherLicText: "Учет лицензий, контроль сроков действия, ответственные, уведомления и экспорт в Excel.",
+          otherPalletTitle: "Паллетировщик",
+          otherPalletText: "Расчет укладки коробов на поддон, 3D-визуализация, ограничения и отчеты.",
+          otherPage: "Страница",
           ctaTitle: "Начните с демоверсии",
           ctaText: "Демоверсия не требует SQL Server: она автоматически создает пример заказов и позволяет посмотреть интерфейс, карты раскроя и отчеты. Рабочая версия подключается к базе и реальным данным предприятия.",
           downloadDemo2: "Скачать демоверсию",
@@ -845,6 +933,17 @@
           faq2Text: "The demo does not require SQL Server: it creates sample orders automatically. The full version connects to the database and real plant data.",
           faq3Title: "Which reports are available?",
           faq3Text: "Excel cutting reports, a Gantt schedule and a material demand report with waste, reusable waste and cost.",
+          otherTitle: "Explore my other software",
+          otherIntro: "Tools for packaging production, logistics, license tracking and database search.",
+          otherBoxPriceTitle: "Corrugated Box Cost Calculator",
+          otherBoxPriceText: "Estimate corrugated packaging costs with materials, printing and additional expenses.",
+          otherDbTitle: "Database Search",
+          otherDbText: "Search SQL Server objects and data, view code, filter results and export reports.",
+          otherLicTitle: "License Manager",
+          otherLicText: "Track licenses, expiration dates, owners, notifications and Excel exports.",
+          otherPalletTitle: "Palletizer",
+          otherPalletText: "Plan pallet stacking with 3D visualization, constraints and exportable reports.",
+          otherPage: "Page",
           ctaTitle: "Start with the demo",
           ctaText: "The demo does not require SQL Server: it creates sample orders automatically and lets you review the interface, cutting maps and reports. The full version connects to the database and real plant data.",
           downloadDemo2: "Download demo",
@@ -895,6 +994,12 @@
         nodes.forEach((node) => {
           const key = node.dataset.i18n;
           if (text[next][key]) node.textContent = text[next][key];
+        });
+        document.querySelectorAll("[data-ru-href][data-en-href]").forEach((node) => {
+          node.href = next === EN ? node.dataset.enHref : node.dataset.ruHref;
+        });
+        document.querySelectorAll("[data-ru-src][data-en-src]").forEach((node) => {
+          node.src = next === EN ? node.dataset.enSrc : node.dataset.ruSrc;
         });
         btnRu.classList.toggle("active", next === RU);
         btnEn.classList.toggle("active", next === EN);
