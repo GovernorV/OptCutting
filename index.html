@@ -393,12 +393,13 @@
     .steps {
       counter-reset: step;
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
     }
     .step {
       position: relative;
       padding-top: 52px;
+      min-height: 200px;
     }
     .step::before {
       counter-increment: step;
@@ -608,7 +609,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="planning-params">
       <div class="wrap section-head">
         <h2 data-i18n="paramsTitle">Параметры, которые влияют на план</h2>
         <p data-i18n="paramsText">Форматы полотна, продольные и поперечные резы, скорость, перенастройки, рабочий день, субботы/воскресенья, интервалы ППР, пороги обрези и правила обработки просроченных заказов.</p>
@@ -704,6 +705,18 @@
       </div>
     </section>
 
+    <section class="cta">
+      <div class="wrap">
+        <h2 data-i18n="ctaTitle">Начните с демоверсии</h2>
+        <p data-i18n="ctaText">Демоверсия не требует SQL Server: она автоматически создает пример заказов и позволяет посмотреть интерфейс, карты раскроя и отчеты. Рабочая версия подключается к базе и реальным данным предприятия.</p>
+        <div class="actions">
+          <a class="btn primary" href="https://disk.yandex.ru/d/QvA8G1ypPv7D9Q" target="_blank" rel="noopener" data-i18n="downloadDemo2">Скачать демоверсию</a>
+          <a class="btn secondary" href="https://disk.yandex.ru/d/bQpwJtV6sclQTA" target="_blank" rel="noopener" data-i18n="openPresentation2">Скачать презентацию</a>
+          <a class="btn secondary" href="mailto:vguberniev@gmail.com" data-i18n="contact">Написать автору</a>
+        </div>
+      </div>
+    </section>
+
     <section id="other-programs">
       <div class="wrap section-head">
         <h2 data-i18n="otherTitle">Посмотрите другие мои программы</h2>
@@ -750,18 +763,6 @@
             <a class="btn light" href="https://governorv.github.io/BoxPalletizer/#ru" data-ru-href="https://governorv.github.io/BoxPalletizer/#ru" data-en-href="https://governorv.github.io/BoxPalletizer/#en" target="_blank" rel="noopener" data-i18n="otherPage">Страница</a>
           </div>
         </article>
-      </div>
-    </section>
-
-    <section class="cta">
-      <div class="wrap">
-        <h2 data-i18n="ctaTitle">Начните с демоверсии</h2>
-        <p data-i18n="ctaText">Демоверсия не требует SQL Server: она автоматически создает пример заказов и позволяет посмотреть интерфейс, карты раскроя и отчеты. Рабочая версия подключается к базе и реальным данным предприятия.</p>
-        <div class="actions">
-          <a class="btn primary" href="https://disk.yandex.ru/d/QvA8G1ypPv7D9Q" target="_blank" rel="noopener" data-i18n="downloadDemo2">Скачать демоверсию</a>
-          <a class="btn secondary" href="https://disk.yandex.ru/d/bQpwJtV6sclQTA" target="_blank" rel="noopener" data-i18n="openPresentation2">Скачать презентацию</a>
-          <a class="btn secondary" href="mailto:vguberniev@gmail.com" data-i18n="contact">Написать автору</a>
-        </div>
       </div>
     </section>
   </main>
