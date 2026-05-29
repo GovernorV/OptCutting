@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Раскройщик OptCutting — оптимизация раскроя полотна гофрокартона</title>
-  <meta name="description" content="Раскройщик OptCutting: Windows-программа для оптимизации раскроя полотна гофрокартона, снижения отходов, учета сроков, ППР, совместимости марок и формирования Excel-отчетов.">
-  <meta name="keywords" content="раскройщик, OptCutting, раскрой гофрокартона, оптимизация раскроя, раскрой полотна, гофроагрегат, карты раскроя, сетевой график, деловой отход, MS SQL Server, Excel отчеты">
+  <meta name="description" content="Раскройщик OptCutting: Windows-программа для оптимизации раскроя полотна гофрокартона, снижения отходов, учета сроков, ППР, совместимости марок, сравнения фактического плана и формирования Excel/Word-отчетов.">
+  <meta name="keywords" content="раскройщик, OptCutting, раскрой гофрокартона, оптимизация раскроя, раскрой полотна, гофроагрегат, карты раскроя, сетевой график, фактический план, сравнение планов, деловой отход, MS SQL Server, Excel отчеты, Word отчет">
   <meta name="author" content="Viktor Guberniev">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="application-name" content="OptCutting">
@@ -22,7 +22,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="PackTuning Software">
   <meta property="og:title" content="Раскройщик OptCutting — оптимизация раскроя гофрокартона">
-  <meta property="og:description" content="Планирование раскроя полотна гофрокартона с учетом сроков, ППР, подкроя, совместимости марок, отходов и Excel-отчетов.">
+  <meta property="og:description" content="Планирование раскроя полотна гофрокартона с учетом сроков, ППР, подкроя, совместимости марок, отходов, фактического плана и Excel/Word-отчетов.">
   <meta property="og:url" content="https://governorv.github.io/OptCutting/">
   <meta property="og:image" content="https://governorv.github.io/OptCutting/assets/social-card.png">
   <meta property="og:image:width" content="800">
@@ -32,7 +32,7 @@
   <meta property="og:locale:alternate" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Раскройщик OptCutting — оптимизация раскроя гофрокартона">
-  <meta name="twitter:description" content="Windows-программа для раскроя полотна гофрокартона, снижения отходов, контроля сроков и формирования Excel-отчетов.">
+  <meta name="twitter:description" content="Windows-программа для раскроя полотна гофрокартона, снижения отходов, контроля сроков, сравнения фактического плана и формирования Excel/Word-отчетов.">
   <meta name="twitter:image" content="https://governorv.github.io/OptCutting/assets/social-card.png">
   <script type="application/ld+json">
   {
@@ -69,7 +69,7 @@
           "https://governorv.github.io/OptCutting/assets/screen-params.png",
           "https://governorv.github.io/OptCutting/assets/report-cutting.png"
         ],
-        "description": "Windows-программа для оптимизации раскроя полотна гофрокартона: заказы, сроки, ППР, подкрой, совместимость марок, карты раскроя и Excel-отчеты.",
+        "description": "Windows-программа для оптимизации раскроя полотна гофрокартона: заказы, сроки, ППР, подкрой, совместимость марок, карты раскроя, сравнение фактического плана и Excel/Word-отчеты.",
         "featureList": [
           "Оптимизация раскроя полотна гофрокартона",
           "Расчет карт раскроя и подкроя",
@@ -77,7 +77,9 @@
           "Совместимость марок картона и расчет повышения марки",
           "Диаграмма Ганта работы гофроагрегата",
           "Ведомость потребности в картоне",
+          "Загрузка фактического плана из Excel и сравнение с оптимизированным расчетом",
           "Импорт и экспорт Excel",
+          "Word-отчет по сравнению фактического и оптимизированного плана",
           "Работа с MS SQL Server в рабочей версии"
         ],
         "offers": [
@@ -133,7 +135,15 @@
             "name": "Какие отчеты формирует программа?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Программа формирует Excel-отчет по раскроям, сетевой график в виде диаграммы Ганта и ведомость потребности в картоне."
+              "text": "Программа формирует Excel-отчет по раскроям, сетевой график в виде диаграммы Ганта, ведомость потребности в картоне и Word-отчет по сравнению фактического и оптимизированного плана."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Можно ли сравнить оптимизацию с фактическим планом?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Да. Рабочая версия загружает фактический план из Excel с листами «Раскрой», «Заказы» и «Параметры», оценивает его показатели и после расчета показывает сравнение с оптимизированным вариантом."
             }
           }
         ]
@@ -521,6 +531,7 @@
       </a>
       <nav aria-label="Main navigation">
         <a href="#features" data-i18n="navFeatures">Возможности</a>
+        <a href="#actual-plan" data-i18n="navActual">Сравнение</a>
         <a href="#reports" data-i18n="navReports">Отчеты</a>
         <a href="#pricing" data-i18n="navPricing">Цены</a>
         <div class="switch" aria-label="Theme">
@@ -540,7 +551,7 @@
       <div class="wrap hero-content">
         <div class="eyebrow" data-i18n="eyebrow">Windows-программа для гофропроизводства</div>
         <h1 data-i18n="heroTitle">Раскройщик OptCutting</h1>
-        <p data-i18n="heroText">Оптимизация раскроя полотна гофрокартона: заказы, сроки, ППР, подкрой, совместимость марок, карты раскроя и Excel-отчеты в одном рабочем инструменте.</p>
+        <p data-i18n="heroText">Оптимизация раскроя полотна гофрокартона: заказы, сроки, ППР, подкрой, совместимость марок, карты раскроя, сравнение фактического плана и Excel/Word-отчеты в одном рабочем инструменте.</p>
         <div class="actions">
           <a class="btn primary" href="https://disk.yandex.ru/d/QvA8G1ypPv7D9Q" target="_blank" rel="noopener" data-i18n="downloadDemo">Скачать демоверсию</a>
           <a class="btn secondary" href="https://disk.yandex.ru/d/bQpwJtV6sclQTA" target="_blank" rel="noopener" data-i18n="openPresentation">Смотреть презентацию</a>
@@ -602,7 +613,7 @@
             </div>
             <div class="card">
               <h3 data-i18n="feature4Title">SQL и Excel</h3>
-              <p data-i18n="feature4Text">Рабочая версия хранит данные в SQL Server, импортирует и экспортирует Excel.</p>
+              <p data-i18n="feature4Text">Рабочая версия хранит данные в SQL Server, импортирует заказы и фактические планы из Excel.</p>
             </div>
           </div>
         </div>
@@ -620,7 +631,7 @@
             <div class="card step"><h3 data-i18n="step1Title">Заказы</h3><p data-i18n="step1Text">Импортируйте или создайте заказы, выберите заказчика и тип заготовки.</p></div>
             <div class="card step"><h3 data-i18n="step2Title">Оборудование</h3><p data-i18n="step2Text">Задайте форматы, резы, скорость и время перенастройки.</p></div>
             <div class="card step"><h3 data-i18n="step3Title">Календарь</h3><p data-i18n="step3Text">Укажите дату старта, рабочее время, выходные и интервалы ППР.</p></div>
-            <div class="card step"><h3 data-i18n="step4Title">Расчет</h3><p data-i18n="step4Text">Получите план раскроя, карту, сводку и Excel-отчеты.</p></div>
+            <div class="card step"><h3 data-i18n="step4Title">Расчет</h3><p data-i18n="step4Text">Получите план раскроя, карту, сводку, Excel-отчеты и сравнение с фактом.</p></div>
           </div>
         </div>
         <div class="screen">
@@ -630,10 +641,34 @@
       </div>
     </section>
 
+    <section id="actual-plan">
+      <div class="wrap section-head">
+        <h2 data-i18n="actualTitle">Проверка на фактическом плане</h2>
+        <p data-i18n="actualText">Рабочая версия может загрузить реальный план производства из Excel, посчитать его показатели и сразу сравнить с оптимизированным вариантом OptCutting.</p>
+      </div>
+      <div class="wrap grid">
+        <div class="card">
+          <div class="feature-num">01</div>
+          <h3 data-i18n="actual1Title">Три листа Excel</h3>
+          <p data-i18n="actual1Text">Файл содержит листы «Раскрой», «Заказы» и «Параметры». Формат раскроя совпадает с отчетом программы, а коды заказов берутся из листа заказов.</p>
+        </div>
+        <div class="card">
+          <div class="feature-num">02</div>
+          <h3 data-i18n="actual2Title">Оценка как у расчета</h3>
+          <p data-i18n="actual2Text">После загрузки видны серии, отход, процент отхода, деловой отход, полезная площадь, длина, опоздания и раскрои выше порога.</p>
+        </div>
+        <div class="card">
+          <div class="feature-num">03</div>
+          <h3 data-i18n="actual3Title">Сравнение в отчетах</h3>
+          <p data-i18n="actual3Text">После оптимизации программа добавляет сравнение фактического и расчетного плана в Excel и формирует отдельный Word-отчет.</p>
+        </div>
+      </div>
+    </section>
+
     <section id="reports">
       <div class="wrap section-head">
         <h2 data-i18n="reportsTitle">Отчеты для производства и руководителя</h2>
-        <p data-i18n="reportsText">Файлы Excel открываются автоматически и сохраняют цветовую подсветку: опоздания, повышение марки, частично скроенные и нескроенные заказы.</p>
+        <p data-i18n="reportsText">Файлы Excel открываются автоматически и сохраняют цветовую подсветку: опоздания, повышение марки, частично скроенные и нескроенные заказы. Для фактического плана доступен отдельный Word-отчет сравнения.</p>
       </div>
       <div class="wrap report-grid">
         <div class="screen">
@@ -700,7 +735,11 @@
         </div>
         <div class="card">
           <h3 data-i18n="faq3Title">Какие отчеты формируются?</h3>
-          <p data-i18n="faq3Text">Excel-отчет по раскроям, сетевой график в виде диаграммы Ганта и ведомость потребности в картоне с отходом, деловым отходом и стоимостью.</p>
+          <p data-i18n="faq3Text">Excel-отчет по раскроям, сетевой график в виде диаграммы Ганта, ведомость потребности в картоне и Word-отчет сравнения фактического и оптимизированного плана.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="faq4Title">Можно сравнить с текущим планом?</h3>
+          <p data-i18n="faq4Text">Да. Рабочая версия загружает фактический план из Excel, оценивает его показатели и после расчета показывает, что изменилось в оптимизированном варианте.</p>
         </div>
       </div>
     </section>
@@ -708,7 +747,7 @@
     <section class="cta">
       <div class="wrap">
         <h2 data-i18n="ctaTitle">Начните с демоверсии</h2>
-        <p data-i18n="ctaText">Демоверсия не требует SQL Server: она автоматически создает пример заказов и позволяет посмотреть интерфейс, карты раскроя и отчеты. Рабочая версия подключается к базе и реальным данным предприятия.</p>
+        <p data-i18n="ctaText">Демоверсия не требует SQL Server: она автоматически создает пример заказов и позволяет посмотреть интерфейс, карты раскроя и отчеты. Рабочая версия подключается к базе, реальным данным предприятия и фактическим планам из Excel.</p>
         <div class="actions">
           <a class="btn primary" href="https://disk.yandex.ru/d/QvA8G1ypPv7D9Q" target="_blank" rel="noopener" data-i18n="downloadDemo2">Скачать демоверсию</a>
           <a class="btn secondary" href="https://disk.yandex.ru/d/bQpwJtV6sclQTA" target="_blank" rel="noopener" data-i18n="openPresentation2">Скачать презентацию</a>
@@ -785,11 +824,12 @@
         ru: {
           brandSub: "Раскройщик гофрокартона",
           navFeatures: "Возможности",
+          navActual: "Сравнение",
           navReports: "Отчеты",
           navPricing: "Цены",
           eyebrow: "Windows-программа для гофропроизводства",
           heroTitle: "Раскройщик OptCutting",
-          heroText: "Оптимизация раскроя полотна гофрокартона: заказы, сроки, ППР, подкрой, совместимость марок, карты раскроя и Excel-отчеты в одном рабочем инструменте.",
+          heroText: "Оптимизация раскроя полотна гофрокартона: заказы, сроки, ППР, подкрой, совместимость марок, карты раскроя, сравнение фактического плана и Excel/Word-отчеты в одном рабочем инструменте.",
           downloadDemo: "Скачать демоверсию",
           openPresentation: "Смотреть презентацию",
           chipPrice: "Бессрочно: 99 000 ₽",
@@ -812,7 +852,7 @@
           feature3Title: "Совместимость марок",
           feature3Text: "Повышение марки оценивается через метод эквивалентной обрези.",
           feature4Title: "SQL и Excel",
-          feature4Text: "Рабочая версия хранит данные в SQL Server, импортирует и экспортирует Excel.",
+          feature4Text: "Рабочая версия хранит данные в SQL Server, импортирует заказы и фактические планы из Excel.",
           paramsTitle: "Параметры, которые влияют на план",
           paramsText: "Форматы полотна, продольные и поперечные резы, скорость, перенастройки, рабочий день, субботы/воскресенья, интервалы ППР, пороги обрези и правила обработки просроченных заказов.",
           step1Title: "Заказы",
@@ -822,10 +862,18 @@
           step3Title: "Календарь",
           step3Text: "Укажите дату старта, рабочее время, выходные и интервалы ППР.",
           step4Title: "Расчет",
-          step4Text: "Получите план раскроя, карту, сводку и Excel-отчеты.",
+          step4Text: "Получите план раскроя, карту, сводку, Excel-отчеты и сравнение с фактом.",
           paramsCaption: "Окно параметров расчета.",
+          actualTitle: "Проверка на фактическом плане",
+          actualText: "Рабочая версия может загрузить реальный план производства из Excel, посчитать его показатели и сразу сравнить с оптимизированным вариантом OptCutting.",
+          actual1Title: "Три листа Excel",
+          actual1Text: "Файл содержит листы «Раскрой», «Заказы» и «Параметры». Формат раскроя совпадает с отчетом программы, а коды заказов берутся из листа заказов.",
+          actual2Title: "Оценка как у расчета",
+          actual2Text: "После загрузки видны серии, отход, процент отхода, деловой отход, полезная площадь, длина, опоздания и раскрои выше порога.",
+          actual3Title: "Сравнение в отчетах",
+          actual3Text: "После оптимизации программа добавляет сравнение фактического и расчетного плана в Excel и формирует отдельный Word-отчет.",
           reportsTitle: "Отчеты для производства и руководителя",
-          reportsText: "Файлы Excel открываются автоматически и сохраняют цветовую подсветку: опоздания, повышение марки, частично скроенные и нескроенные заказы.",
+          reportsText: "Файлы Excel открываются автоматически и сохраняют цветовую подсветку: опоздания, повышение марки, частично скроенные и нескроенные заказы. Для фактического плана доступен отдельный Word-отчет сравнения.",
           report1: "Раскрои: серии, заказы, полотна, примечания.",
           report2: "Сетевой график: диаграмма Ганта работы гофроагрегата.",
           report3: "Потребность: марки картона, отход, деловой отход, стоимость.",
@@ -848,7 +896,9 @@
           faq2Title: "Нужен ли SQL Server для демо?",
           faq2Text: "Демоверсия не требует SQL Server: она автоматически создает пример заказов. Рабочая версия подключается к базе и реальным данным предприятия.",
           faq3Title: "Какие отчеты формируются?",
-          faq3Text: "Excel-отчет по раскроям, сетевой график в виде диаграммы Ганта и ведомость потребности в картоне с отходом, деловым отходом и стоимостью.",
+          faq3Text: "Excel-отчет по раскроям, сетевой график в виде диаграммы Ганта, ведомость потребности в картоне и Word-отчет сравнения фактического и оптимизированного плана.",
+          faq4Title: "Можно сравнить с текущим планом?",
+          faq4Text: "Да. Рабочая версия загружает фактический план из Excel, оценивает его показатели и после расчета показывает, что изменилось в оптимизированном варианте.",
           otherTitle: "Посмотрите другие мои программы",
           otherIntro: "Инструменты для упаковочного производства, логистики, учета лицензий и поиска по базам данных.",
           otherBoxPriceTitle: "Калькулятор стоимости гофроящика",
@@ -861,7 +911,7 @@
           otherPalletText: "Расчет укладки коробов на поддон, 3D-визуализация, ограничения и отчеты.",
           otherPage: "Страница",
           ctaTitle: "Начните с демоверсии",
-          ctaText: "Демоверсия не требует SQL Server: она автоматически создает пример заказов и позволяет посмотреть интерфейс, карты раскроя и отчеты. Рабочая версия подключается к базе и реальным данным предприятия.",
+          ctaText: "Демоверсия не требует SQL Server: она автоматически создает пример заказов и позволяет посмотреть интерфейс, карты раскроя и отчеты. Рабочая версия подключается к базе, реальным данным предприятия и фактическим планам из Excel.",
           downloadDemo2: "Скачать демоверсию",
           openPresentation2: "Скачать презентацию",
           contact: "Написать автору",
@@ -870,11 +920,12 @@
         en: {
           brandSub: "Corrugated board cutting optimizer",
           navFeatures: "Features",
+          navActual: "Comparison",
           navReports: "Reports",
           navPricing: "Pricing",
           eyebrow: "Windows software for corrugated production",
           heroTitle: "OptCutting",
-          heroText: "Corrugated web cutting optimization: orders, due dates, planned maintenance, nested cuts, compatible board grades, cutting maps and Excel reports in one production tool.",
+          heroText: "Corrugated web cutting optimization: orders, due dates, planned maintenance, nested cuts, compatible board grades, cutting maps, actual plan comparison and Excel/Word reports in one production tool.",
           downloadDemo: "Download demo",
           openPresentation: "View presentation",
           chipPrice: "Perpetual: 99,000 RUB",
@@ -897,7 +948,7 @@
           feature3Title: "Grade compatibility",
           feature3Text: "Grade upgrades are evaluated using equivalent trim waste.",
           feature4Title: "SQL and Excel",
-          feature4Text: "The full version stores data in SQL Server and imports/exports Excel files.",
+          feature4Text: "The full version stores data in SQL Server and imports orders and actual production plans from Excel.",
           paramsTitle: "Planning parameters",
           paramsText: "Web widths, longitudinal and cross cuts, speed, setup time, working day, Saturdays/Sundays, maintenance intervals, trim thresholds and overdue order handling.",
           step1Title: "Orders",
@@ -907,10 +958,18 @@
           step3Title: "Calendar",
           step3Text: "Set start date, working hours, weekends and maintenance windows.",
           step4Title: "Calculate",
-          step4Text: "Get the cutting plan, map, summary and Excel reports.",
+          step4Text: "Get the cutting plan, map, summary, Excel reports and comparison with the actual plan.",
           paramsCaption: "Calculation parameters window.",
+          actualTitle: "Actual plan comparison",
+          actualText: "The full version can load a real production plan from Excel, calculate its indicators and immediately compare it with the optimized OptCutting plan.",
+          actual1Title: "Three Excel sheets",
+          actual1Text: "The workbook contains Cutting, Orders and Parameters sheets. The cutting sheet follows the program report format, and order codes are taken from the Orders sheet.",
+          actual2Title: "Same metrics as calculation",
+          actual2Text: "After loading, the user sees series, waste, waste percentage, reusable waste, useful area, length, lateness and cuts above the threshold.",
+          actual3Title: "Comparison reports",
+          actual3Text: "After optimization, the program adds actual-vs-optimized comparison to Excel and generates a separate Word report.",
           reportsTitle: "Reports for production and management",
-          reportsText: "Excel files open automatically and keep color highlighting: lateness, grade upgrades, partially cut and uncut orders.",
+          reportsText: "Excel files open automatically and keep color highlighting: lateness, grade upgrades, partially cut and uncut orders. For actual plans, a separate Word comparison report is available.",
           report1: "Cutting report: series, orders, sheets and notes.",
           report2: "Network schedule: corrugator Gantt chart.",
           report3: "Material demand: board grades, waste, reusable waste and cost.",
@@ -933,7 +992,9 @@
           faq2Title: "Is SQL Server required for the demo?",
           faq2Text: "The demo does not require SQL Server: it creates sample orders automatically. The full version connects to the database and real plant data.",
           faq3Title: "Which reports are available?",
-          faq3Text: "Excel cutting reports, a Gantt schedule and a material demand report with waste, reusable waste and cost.",
+          faq3Text: "Excel cutting reports, a Gantt schedule, a material demand report and a Word report comparing the actual and optimized plans.",
+          faq4Title: "Can it compare with the current plan?",
+          faq4Text: "Yes. The full version loads the actual plan from Excel, evaluates its metrics and then shows what changed in the optimized version.",
           otherTitle: "Explore my other software",
           otherIntro: "Tools for packaging production, logistics, license tracking and database search.",
           otherBoxPriceTitle: "Corrugated Box Cost Calculator",
@@ -946,7 +1007,7 @@
           otherPalletText: "Plan pallet stacking with 3D visualization, constraints and exportable reports.",
           otherPage: "Page",
           ctaTitle: "Start with the demo",
-          ctaText: "The demo does not require SQL Server: it creates sample orders automatically and lets you review the interface, cutting maps and reports. The full version connects to the database and real plant data.",
+          ctaText: "The demo does not require SQL Server: it creates sample orders automatically and lets you review the interface, cutting maps and reports. The full version connects to the database, real plant data and actual plans from Excel.",
           downloadDemo2: "Download demo",
           openPresentation2: "Download presentation",
           contact: "Contact author",
@@ -959,18 +1020,18 @@
         en: "OptCutting — corrugated board cutting optimization"
       };
       const descText = {
-        ru: "Windows-программа для оптимизации раскроя полотна гофрокартона, снижения отходов, учета сроков, ППР, совместимости марок и формирования Excel-отчетов.",
-        en: "Windows software for corrugated web cutting optimization with due dates, maintenance windows, board grade compatibility and Excel reports."
+        ru: "Windows-программа для оптимизации раскроя полотна гофрокартона, снижения отходов, учета сроков, ППР, совместимости марок, сравнения фактического плана и формирования Excel/Word-отчетов.",
+        en: "Windows software for corrugated web cutting optimization with due dates, maintenance windows, board grade compatibility, actual plan comparison and Excel/Word reports."
       };
       const ogText = {
         ru: {
           title: "Раскройщик OptCutting — оптимизация раскроя гофрокартона",
-          desc: "Планирование раскроя полотна гофрокартона с учетом сроков, ППР, подкроя, совместимости марок, отходов и Excel-отчетов.",
+          desc: "Планирование раскроя полотна гофрокартона с учетом сроков, ППР, подкроя, совместимости марок, отходов, фактического плана и Excel/Word-отчетов.",
           url: "https://governorv.github.io/OptCutting/"
         },
         en: {
           title: "OptCutting — corrugated board cutting optimization",
-          desc: "Corrugated web cutting planning with due dates, maintenance windows, nested cuts, board grade compatibility, waste control and Excel reports.",
+          desc: "Corrugated web cutting planning with due dates, maintenance windows, nested cuts, board grade compatibility, actual plan comparison, waste control and Excel/Word reports.",
           url: "https://governorv.github.io/OptCutting/?lang=en"
         }
       };
