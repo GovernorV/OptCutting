@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Раскройщик OptCutting — оптимизация раскроя полотна гофрокартона</title>
-  <meta name="description" content="Раскройщик OptCutting: Windows-программа для оптимизации раскроя полотна гофрокартона, снижения отходов, учета сроков, ППР, совместимости марок, сравнения фактического плана и формирования Excel/Word-отчетов.">
-  <meta name="keywords" content="раскройщик, OptCutting, раскрой гофрокартона, оптимизация раскроя, раскрой полотна, гофроагрегат, карты раскроя, сетевой график, фактический план, сравнение планов, деловой отход, MS SQL Server, Excel отчеты, Word отчет">
+  <title>Раскройщик OptCutting — программа оптимизации раскроя гофрокартона</title>
+  <meta name="description" content="Раскройщик OptCutting: Windows-программа для оптимизации раскроя полотна гофрокартона, расчета карт раскроя, снижения отходов, учета сроков, ППР, совместимости марок и формирования Excel/Word-отчетов.">
+  <meta name="keywords" content="раскройщик, OptCutting, программа раскроя гофрокартона, раскрой гофрокартона, оптимизация раскроя, раскрой полотна, карты раскроя, сетевой график, гофроагрегат, фактический план, сравнение планов, деловой отход, MS SQL Server, Excel отчеты, Word отчет">
   <meta name="author" content="Viktor Guberniev">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="application-name" content="OptCutting">
@@ -21,8 +21,8 @@
   <link rel="manifest" href="https://governorv.github.io/OptCutting/site.webmanifest">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="PackTuning Software">
-  <meta property="og:title" content="Раскройщик OptCutting — оптимизация раскроя гофрокартона">
-  <meta property="og:description" content="Планирование раскроя полотна гофрокартона с учетом сроков, ППР, подкроя, совместимости марок, отходов, фактического плана и Excel/Word-отчетов.">
+  <meta property="og:title" content="Раскройщик OptCutting — программа оптимизации раскроя гофрокартона">
+  <meta property="og:description" content="Карты раскроя полотна гофрокартона, снижение отходов, учет сроков и ППР, совместимость марок, сравнение фактического плана и Excel/Word-отчеты.">
   <meta property="og:url" content="https://governorv.github.io/OptCutting/">
   <meta property="og:image" content="https://governorv.github.io/OptCutting/assets/social-card.png">
   <meta property="og:image:width" content="800">
@@ -31,9 +31,10 @@
   <meta property="og:locale" content="ru_RU">
   <meta property="og:locale:alternate" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Раскройщик OptCutting — оптимизация раскроя гофрокартона">
-  <meta name="twitter:description" content="Windows-программа для раскроя полотна гофрокартона, снижения отходов, контроля сроков, сравнения фактического плана и формирования Excel/Word-отчетов.">
+  <meta name="twitter:title" content="Раскройщик OptCutting — программа оптимизации раскроя гофрокартона">
+  <meta name="twitter:description" content="Windows-программа для раскроя полотна гофрокартона, карт раскроя, снижения отходов, контроля сроков и формирования Excel/Word-отчетов.">
   <meta name="twitter:image" content="https://governorv.github.io/OptCutting/assets/social-card.png">
+  <meta name="twitter:image:alt" content="Раскройщик OptCutting: программа для оптимизации раскроя полотна гофрокартона">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -69,7 +70,7 @@
           "https://governorv.github.io/OptCutting/assets/screen-params.png",
           "https://governorv.github.io/OptCutting/assets/report-cutting.png"
         ],
-        "description": "Windows-программа для оптимизации раскроя полотна гофрокартона: заказы, сроки, ППР, подкрой, совместимость марок, карты раскроя, сравнение фактического плана и Excel/Word-отчеты.",
+        "description": "Windows-программа для оптимизации раскроя полотна гофрокартона: карты раскроя, снижение отходов, заказы, сроки, ППР, подкрой, совместимость марок, сравнение фактического плана и Excel/Word-отчеты.",
         "featureList": [
           "Оптимизация раскроя полотна гофрокартона",
           "Расчет карт раскроя и подкроя",
@@ -146,6 +147,14 @@
               "text": "Да. Рабочая версия загружает фактический план из Excel с листами «Раскрой», «Заказы» и «Параметры», оценивает его показатели и после расчета показывает сравнение с оптимизированным вариантом."
             }
           }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://governorv.github.io/OptCutting/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "PackTuning Software", "item": "https://governorv.github.io/ProgramCatalog/" },
+          { "@type": "ListItem", "position": 2, "name": "Раскройщик OptCutting", "item": "https://governorv.github.io/OptCutting/" }
         ]
       }
     ]
@@ -1032,22 +1041,22 @@
       };
 
       const titleText = {
-        ru: "Раскройщик OptCutting — оптимизация раскроя полотна гофрокартона",
-        en: "OptCutting — corrugated board cutting optimization"
+        ru: "Раскройщик OptCutting — программа оптимизации раскроя гофрокартона",
+        en: "OptCutting — corrugated board cutting optimization software"
       };
       const descText = {
-        ru: "Windows-программа для оптимизации раскроя полотна гофрокартона, снижения отходов, учета сроков, ППР, совместимости марок, сравнения фактического плана и формирования Excel/Word-отчетов.",
-        en: "Windows software for corrugated web cutting optimization with due dates, maintenance windows, board grade compatibility, actual plan comparison and Excel/Word reports."
+        ru: "Windows-программа для оптимизации раскроя полотна гофрокартона, расчета карт раскроя, снижения отходов, учета сроков, ППР, совместимости марок и формирования Excel/Word-отчетов.",
+        en: "Windows software for corrugated web cutting optimization, cutting maps, waste reduction, due dates, maintenance windows, board grade compatibility and Excel/Word reports."
       };
       const ogText = {
         ru: {
-          title: "Раскройщик OptCutting — оптимизация раскроя гофрокартона",
-          desc: "Планирование раскроя полотна гофрокартона с учетом сроков, ППР, подкроя, совместимости марок, отходов, фактического плана и Excel/Word-отчетов.",
+          title: "Раскройщик OptCutting — программа оптимизации раскроя гофрокартона",
+          desc: "Карты раскроя полотна гофрокартона, снижение отходов, учет сроков и ППР, совместимость марок, сравнение фактического плана и Excel/Word-отчеты.",
           url: "https://governorv.github.io/OptCutting/"
         },
         en: {
-          title: "OptCutting — corrugated board cutting optimization",
-          desc: "Corrugated web cutting planning with due dates, maintenance windows, nested cuts, board grade compatibility, actual plan comparison, waste control and Excel/Word reports.",
+          title: "OptCutting — corrugated board cutting optimization software",
+          desc: "Corrugated web cutting maps, waste reduction, due dates, maintenance windows, board grade compatibility, actual plan comparison and Excel/Word reports.",
           url: "https://governorv.github.io/OptCutting/?lang=en"
         }
       };
