@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ru" data-theme="day">
 <head>
   <meta charset="utf-8">
@@ -262,7 +262,19 @@
       font-weight: 800;
       cursor: pointer;
     }
-    .switch { display: flex; gap: 7px; }
+    .switch {
+      display: inline-flex;
+      gap: 4px;
+      padding: 4px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--panel) 82%, transparent);
+    }
+    .switch button {
+      border: 0;
+      background: transparent;
+      padding: 10px 18px;
+    }
     .switch button.active {
       border-color: transparent;
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
@@ -544,13 +556,9 @@
         <a href="#actual-plan" data-i18n="navActual">Сравнение</a>
         <a href="#reports" data-i18n="navReports">Отчеты</a>
         <a href="#pricing" data-i18n="navPricing">Цены</a>
-        <div class="switch" aria-label="Theme">
-          <button type="button" id="theme-day">День</button>
-          <button type="button" id="theme-night">Ночь</button>
-        </div>
         <div class="switch" aria-label="Language">
-          <button type="button" id="lang-ru">RU</button>
-          <button type="button" id="lang-en">EN</button>
+          <button type="button" id="lang-ru">Русский</button>
+          <button type="button" id="lang-en">English</button>
         </div>
       </nav>
     </div>
@@ -814,13 +822,13 @@
           </div>
         </article>
         <article class="card other-product-card">
-          <a href="https://governorv.github.io/palletizer-site/" data-ru-href="https://governorv.github.io/palletizer-site/" data-en-href="https://governorv.github.io/palletizer-site/" target="_blank" rel="noopener">
+          <a href="https://governorv.github.io/palletizer-site/#ru" data-ru-href="https://governorv.github.io/palletizer-site/#ru" data-en-href="https://governorv.github.io/palletizer-site/#en" target="_blank" rel="noopener">
             <img src="assets/cross/platepalletizer_banner.png" data-ru-src="assets/cross/platepalletizer_banner.png" data-en-src="assets/cross/platepalletizer_banner_en.png" alt="Паллетировщик плит" loading="lazy">
           </a>
           <div class="other-product-body">
             <h3 data-i18n="otherPlateTitle">Паллетировщик плит</h3>
             <p data-i18n="otherPlateText">Оптимальное распределение листовых материалов по поддонам: импорт заявок из Excel, расчет поддонов, контроль размеров, веса, высоты и цвета.</p>
-            <a class="btn light" href="https://governorv.github.io/palletizer-site/" data-ru-href="https://governorv.github.io/palletizer-site/" data-en-href="https://governorv.github.io/palletizer-site/" target="_blank" rel="noopener" data-i18n="otherPage">Страница</a>
+            <a class="btn light" href="https://governorv.github.io/palletizer-site/#ru" data-ru-href="https://governorv.github.io/palletizer-site/#ru" data-en-href="https://governorv.github.io/palletizer-site/#en" target="_blank" rel="noopener" data-i18n="otherPage">Страница</a>
           </div>
         </article><article class="card other-product-card">
           <a href="https://governorv.github.io/gost/" data-ru-href="https://governorv.github.io/gost/" data-en-href="https://governorv.github.io/gost/" target="_blank" rel="noopener">
@@ -1077,8 +1085,6 @@
       const nodes = Array.from(document.querySelectorAll("[data-i18n]"));
       const btnRu = document.getElementById("lang-ru");
       const btnEn = document.getElementById("lang-en");
-      const btnDay = document.getElementById("theme-day");
-      const btnNight = document.getElementById("theme-night");
 
       function setLang(lang) {
         const next = lang === EN ? EN : RU;
@@ -1112,14 +1118,9 @@
         history.replaceState(null, "", url);
       }
 
-      function setTheme(theme, persist = false) {
+      function setTheme(theme) {
         const next = theme === NIGHT ? NIGHT : DAY;
         document.documentElement.dataset.theme = next;
-        btnDay.classList.toggle("active", next === DAY);
-        btnNight.classList.toggle("active", next === NIGHT);
-        if (persist) {
-          try { localStorage.setItem("optcutting-theme", next); } catch (e) {}
-        }
       }
 
       function automaticTheme() {
@@ -1142,17 +1143,11 @@
       }
 
       function initialTheme() {
-        try {
-          const saved = localStorage.getItem("optcutting-theme");
-          if (saved === DAY || saved === NIGHT) return saved;
-        } catch (e) {}
         return automaticTheme();
       }
 
       btnRu.addEventListener("click", () => setLang(RU));
       btnEn.addEventListener("click", () => setLang(EN));
-      btnDay.addEventListener("click", () => setTheme(DAY, true));
-      btnNight.addEventListener("click", () => setTheme(NIGHT, true));
       window.addEventListener("hashchange", () => {
         const hash = location.hash.toLowerCase();
         if (hash === "#ru") setLang(RU);
@@ -1162,9 +1157,7 @@
       setTheme(initialTheme());
       setLang(initialLang());
       setInterval(() => {
-        try {
-          if (!localStorage.getItem("optcutting-theme")) setTheme(automaticTheme());
-        } catch (e) {}
+        setTheme(automaticTheme());
       }, 60 * 1000);
     })();
   </script>
