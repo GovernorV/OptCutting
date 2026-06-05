@@ -1112,12 +1112,19 @@
         history.replaceState(null, "", url);
       }
 
-      function setTheme(theme) {
+      function setTheme(theme, persist = false) {
         const next = theme === NIGHT ? NIGHT : DAY;
         document.documentElement.dataset.theme = next;
         btnDay.classList.toggle("active", next === DAY);
         btnNight.classList.toggle("active", next === NIGHT);
-        try { localStorage.setItem("optcutting-theme", next); } catch (e) {}
+        if (persist) {
+          try { localStorage.setItem("optcutting-theme", next); } catch (e) {}
+        }
+      }
+
+      function automaticTheme() {
+        const hour = new Date().getHours();
+        return hour >= 6 && hour < 18 ? DAY : NIGHT;
       }
 
       function initialLang() {
@@ -1139,13 +1146,13 @@
           const saved = localStorage.getItem("optcutting-theme");
           if (saved === DAY || saved === NIGHT) return saved;
         } catch (e) {}
-        return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? NIGHT : DAY;
+        return automaticTheme();
       }
 
       btnRu.addEventListener("click", () => setLang(RU));
       btnEn.addEventListener("click", () => setLang(EN));
-      btnDay.addEventListener("click", () => setTheme(DAY));
-      btnNight.addEventListener("click", () => setTheme(NIGHT));
+      btnDay.addEventListener("click", () => setTheme(DAY, true));
+      btnNight.addEventListener("click", () => setTheme(NIGHT, true));
       window.addEventListener("hashchange", () => {
         const hash = location.hash.toLowerCase();
         if (hash === "#ru") setLang(RU);
@@ -1154,6 +1161,11 @@
 
       setTheme(initialTheme());
       setLang(initialLang());
+      setInterval(() => {
+        try {
+          if (!localStorage.getItem("optcutting-theme")) setTheme(automaticTheme());
+        } catch (e) {}
+      }, 60 * 1000);
     })();
   </script>
 </body>
