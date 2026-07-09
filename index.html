@@ -390,6 +390,56 @@
       padding: 24px;
     }
     .card h3 { color: color-mix(in srgb, var(--accent) 62%, var(--ink)); margin-bottom: 12px; }
+    .language-panel {
+      background: linear-gradient(180deg, var(--panel), var(--panel-soft));
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      padding: clamp(26px, 4vw, 46px);
+    }
+    .language-panel-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr);
+      gap: 42px;
+      align-items: start;
+    }
+    .language-panel h2 {
+      font-size: clamp(38px, 5vw, 62px);
+      margin-bottom: 22px;
+    }
+    .language-panel p {
+      max-width: 760px;
+      font-size: clamp(20px, 2.1vw, 29px);
+      line-height: 1.5;
+      color: var(--ink);
+    }
+    .language-note {
+      border: 1px solid color-mix(in srgb, var(--accent-2) 52%, var(--line));
+      border-radius: 8px;
+      padding: clamp(20px, 3vw, 34px);
+      background: color-mix(in srgb, var(--panel) 82%, transparent);
+    }
+    .language-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .language-tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 72px;
+      padding: 14px 22px;
+      border: 1px solid color-mix(in srgb, var(--accent-2) 60%, var(--line));
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--panel) 86%, transparent);
+      color: var(--ink);
+      font-size: clamp(20px, 2vw, 28px);
+      font-weight: 950;
+      line-height: 1;
+      white-space: nowrap;
+    }
     .feature-num {
       width: 38px;
       height: 38px;
@@ -537,7 +587,7 @@
     }
 
     @media (max-width: 980px) {
-      .section-head, .showcase, .grid.two { grid-template-columns: 1fr; }
+      .section-head, .showcase, .grid.two, .language-panel-grid { grid-template-columns: 1fr; }
       .grid, .pricing, .report-grid, .news-grid, .steps, .faq, .other-products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       nav a { display: none; }
     }
@@ -548,6 +598,10 @@
       .grid, .pricing, .report-grid, .news-grid, .steps, .faq, .other-products-grid { grid-template-columns: 1fr; }
       .hero { min-height: 70vh; padding-top: 86px; }
       .btn { width: 100%; white-space: normal; text-align: center; }
+      .language-panel { padding: 24px 18px; }
+      .language-panel p { font-size: 19px; }
+      .language-tags { gap: 10px; }
+      .language-tag { min-height: 52px; padding: 10px 14px; font-size: 18px; }
     }
   </style>
 </head>
@@ -615,6 +669,32 @@
           <div class="feature-num">03</div>
           <h3 data-i18n="value3Title">Экономика картона</h3>
           <p data-i18n="value3Text">Цены по маркам, повышение марки, деловой отход и ведомость потребности.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="multilingual">
+      <div class="wrap language-panel">
+        <div class="language-panel-grid">
+          <div>
+            <h2 data-i18n="multiTitle">Мультиязычный интерфейс</h2>
+            <p data-i18n="multiText">Раскройщик уже поставляется со словарями интерфейса для десяти языков. Переключение языка помогает внедрять программу в смешанных командах и на площадках с разными рабочими языками.</p>
+            <div class="language-tags" aria-label="Supported interface languages">
+              <span class="language-tag">Русский</span>
+              <span class="language-tag">English</span>
+              <span class="language-tag">Deutsch</span>
+              <span class="language-tag">Français</span>
+              <span class="language-tag" lang="he" dir="rtl">עברית</span>
+              <span class="language-tag">Italiano</span>
+              <span class="language-tag">Қазақша</span>
+              <span class="language-tag">Português</span>
+              <span class="language-tag">Српски</span>
+              <span class="language-tag">Español</span>
+            </div>
+          </div>
+          <div class="language-note">
+            <p data-i18n="multiNote">Если нужен другой язык, можно самостоятельно создать словарь перевода для любого языка и подключить его к программе.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -972,6 +1052,9 @@
           value2Text: "Расчет от даты начала, рабочий календарь, выходные, ППР и опоздания в примечаниях.",
           value3Title: "Экономика картона",
           value3Text: "Цены по маркам, повышение марки, деловой отход и ведомость потребности.",
+          multiTitle: "Мультиязычный интерфейс",
+          multiText: "Раскройщик уже поставляется со словарями интерфейса для десяти языков. Переключение языка помогает внедрять программу в смешанных командах и на площадках с разными рабочими языками.",
+          multiNote: "Если нужен другой язык, можно самостоятельно создать словарь перевода для любого языка и подключить его к программе.",
           mainCaption: "Главное окно: заказы, карта раскроя, сводка и серии.",
           newsTitle: "Новости OptCutting",
           newsIntro: "Ключевые изменения, появившиеся после версии 1.0: точнее расчет, быстрее подготовка заказов и удобнее работа на производстве.",
@@ -1086,9 +1169,9 @@
           heroText: "Corrugated web cutting optimization: orders, due dates, planned maintenance, nested cuts, compatible board grades, cutting maps, actual plan comparison and Excel/Word reports in one production tool.",
           downloadDemo: "Download demo",
           openPresentation: "View presentation",
-          chipPrice: "Perpetual: 99,000 RUB",
-          chipYear: "1 year: 24,900 RUB",
-          chipMonth: "1 month: 2,490 RUB",
+          chipPrice: "Perpetual: €990",
+          chipYear: "1 year: €249",
+          chipMonth: "1 month: €24.90",
           whyTitle: "Why it matters",
           whyText: "On a corrugator it is not enough to reduce trim waste. The plan must be executable by due dates, shifts and maintenance windows. OptCutting builds cutting plans with production constraints and explains the result through maps and reports.",
           value1Title: "Less waste",
@@ -1097,6 +1180,9 @@
           value2Text: "Start date, working calendar, weekends, maintenance intervals and lateness notes.",
           value3Title: "Board economics",
           value3Text: "Board prices, grade upgrades, reusable waste and material requirement reports.",
+          multiTitle: "Multilingual interface",
+          multiText: "OptCutting already ships with interface dictionaries for ten languages. Language switching helps deploy the program in mixed teams and production sites with different working languages.",
+          multiNote: "If another language is needed, you can create your own translation dictionary for any language and connect it to the program.",
           mainCaption: "Main window: orders, cutting map, summary and cutting series.",
           newsTitle: "OptCutting news",
           newsIntro: "Key improvements since version 1.0: more precise calculations, faster order preparation and smoother production work.",
@@ -1154,13 +1240,13 @@
           pricingTitle: "Introductory pricing",
           pricingText: "The price is reduced for first deployments. Version 1.5 already includes corrugated-box calculation, expanded order tools and trim-waste control; real cases help the software keep improving.",
           priceBuyTitle: "Perpetual license",
-          priceBuy: "99,000 RUB",
+          priceBuy: "€990",
           priceBuyText: "For a company that wants to secure long-term usage rights.",
           priceYearTitle: "1-year rental",
-          priceYear: "24,900 RUB",
+          priceYear: "€249",
           priceYearText: "Around 25% of the perpetual license, convenient for pilot operation.",
           priceMonthTitle: "1-month rental",
-          priceMonth: "2,490 RUB",
+          priceMonth: "€24.90",
           priceMonthText: "A low entry point to test the software on your own orders.",
           customText: "Custom development, special reports, data migration and integrations are estimated separately. For first customers, installation and setup can be included in the pilot deployment.",
           faqTitle: "Implementation questions",
