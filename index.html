@@ -385,6 +385,13 @@
       gap: 18px;
     }
     .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .feature-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 24px;
+    }
+    .feature-grid .card { height: 100%; }
+    .feature-screen { margin-top: 24px; }
+    .feature-screen img { width: 100%; height: auto; }
     .card {
       background: linear-gradient(180deg, var(--panel), var(--panel-soft));
       border: 1px solid var(--line);
@@ -744,39 +751,37 @@ html[data-theme="day"] .smart-related-card,html.day-theme .smart-related-card{ba
     </section>
 
     <section id="features">
-      <div class="wrap showcase">
-        <div class="screen">
+      <div class="wrap">
+        <h2 data-i18n="featuresTitle">Основные возможности</h2>
+        <div class="grid feature-grid">
+          <div class="card">
+            <h3 data-i18n="feature1Title">Карты раскроя</h3>
+            <p data-i18n="feature1Text">Белые заготовки на цветном картоне, обрезь, пиктограмма слоя, цвет, профиль и название оборудования, на котором построен раскрой.</p>
+          </div>
+          <div class="card">
+            <h3 data-i18n="feature2Title">Гофроящики</h3>
+            <p data-i18n="feature2Text">Расчет заготовки по внутренним размерам ящика и биговочные линии на карте.</p>
+          </div>
+          <div class="card">
+            <h3 data-i18n="feature3Title">Совместимость марок</h3>
+            <p data-i18n="feature3Text">Повышение марки оценивается через метод эквивалентной обрези.</p>
+          </div>
+          <div class="card">
+            <h3 data-i18n="feature4Title">SQL и Excel</h3>
+            <p data-i18n="feature4Text">Рабочая версия хранит данные в SQL Server, импортирует заказы и фактические планы из Excel, включая рилевки и перерабатывающее оборудование.</p>
+          </div>
+          <div class="card">
+            <h3 data-i18n="feature5Title">Список оборудования</h3>
+            <p data-i18n="feature5Text">Для каждой машины сохраняются наименование и несколько доступных форматов; в расчет включается нужное оборудование.</p>
+          </div>
+          <div class="card">
+            <h3 data-i18n="feature6Title">Без перемешивания форматов</h3>
+            <p data-i18n="feature6Text">Специальный режим сначала планирует все раскрои на одном оборудовании и одном формате, затем переходит к следующему оборудованию и формату.</p>
+          </div>
+        </div>
+        <div class="screen feature-screen">
           <img src="assets/screen-main.png" alt="Главное окно программы OptCutting для раскроя полотна гофрокартона" loading="lazy">
           <div class="caption" data-i18n="mainCaption">Главное окно: заказы, карта раскроя, сводка и серии.</div>
-        </div>
-        <div>
-          <h2 data-i18n="featuresTitle">Основные возможности</h2>
-          <div class="grid two" style="margin-top:22px">
-            <div class="card">
-              <h3 data-i18n="feature1Title">Карты раскроя</h3>
-              <p data-i18n="feature1Text">Белые заготовки на цветном картоне, обрезь, пиктограмма слоя, цвет, профиль и название оборудования, на котором построен раскрой.</p>
-            </div>
-            <div class="card">
-              <h3 data-i18n="feature2Title">Гофроящики</h3>
-              <p data-i18n="feature2Text">Расчет заготовки по внутренним размерам ящика и биговочные линии на карте.</p>
-            </div>
-            <div class="card">
-              <h3 data-i18n="feature3Title">Совместимость марок</h3>
-              <p data-i18n="feature3Text">Повышение марки оценивается через метод эквивалентной обрези.</p>
-            </div>
-            <div class="card">
-              <h3 data-i18n="feature4Title">SQL и Excel</h3>
-              <p data-i18n="feature4Text">Рабочая версия хранит данные в SQL Server, импортирует заказы и фактические планы из Excel, включая рилевки и перерабатывающее оборудование.</p>
-            </div>
-            <div class="card">
-              <h3 data-i18n="feature5Title">Список оборудования</h3>
-              <p data-i18n="feature5Text">Для каждой машины сохраняются наименование и несколько доступных форматов; в расчет включается нужное оборудование.</p>
-            </div>
-            <div class="card">
-              <h3 data-i18n="feature6Title">Без перемешивания форматов</h3>
-              <p data-i18n="feature6Text">Специальный режим сначала планирует все раскрои на одном оборудовании и одном формате, затем переходит к следующему оборудованию и формату.</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
