@@ -61,7 +61,7 @@
         "alternateName": "OptCutting",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Windows",
-        "softwareVersion": "1.5",
+        "softwareVersion": "1.32",
         "url": "https://governorv.github.io/OptCutting/",
         "downloadUrl": "https://mega.nz/file/mkwCURRa#BdSHVswUoJIOpIeQGgU45VXNKdMftsUq1IY466IS_d0",
         "image": "https://governorv.github.io/OptCutting/assets/social-card.png",
@@ -80,6 +80,9 @@
           "Ведомость потребности в картоне",
           "Загрузка фактического плана из Excel и сравнение с оптимизированным расчетом",
           "Импорт и экспорт Excel",
+          "Справочник оборудования с несколькими форматами для каждой машины",
+          "Последовательный расчет без перемешивания оборудования и форматов",
+          "Поля рилевок и перерабатывающего оборудования в заказах и отчетах",
           "Word-отчет по сравнению фактического и оптимизированного плана",
           "Работа с MS SQL Server в рабочей версии"
         ],
@@ -538,6 +541,34 @@
       min-height: 218px;
     }
     .release h3 { margin-bottom: 12px; }
+    .release.latest {
+      grid-column: 1 / -1;
+      min-height: 0;
+      border-color: color-mix(in srgb, var(--accent) 52%, var(--line));
+      background:
+        radial-gradient(circle at 100% 0, color-mix(in srgb, var(--accent) 16%, transparent), transparent 36%),
+        linear-gradient(180deg, var(--panel), var(--panel-soft));
+    }
+    .release-kicker {
+      display: inline-flex;
+      margin-bottom: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--accent) 16%, var(--panel));
+      color: color-mix(in srgb, var(--accent) 72%, var(--ink));
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .release-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 28px;
+      margin: 20px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
     .faq {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -597,7 +628,7 @@
       .wrap { width: min(100% - 28px, 1180px); }
       .topbar-inner { height: auto; padding: 10px 0; align-items: flex-start; }
       .brand span { white-space: normal; }
-      .grid, .pricing, .report-grid, .news-grid, .steps, .faq, .other-products-grid { grid-template-columns: 1fr; }
+      .grid, .pricing, .report-grid, .news-grid, .steps, .faq, .other-products-grid, .release-list { grid-template-columns: 1fr; }
       .hero { min-height: 70vh; padding-top: 86px; }
       .btn { width: 100%; white-space: normal; text-align: center; }
       .language-panel { padding: 24px 18px; }
@@ -719,7 +750,7 @@ html[data-theme="day"] .smart-related-card,html.day-theme .smart-related-card{ba
           <div class="grid two" style="margin-top:22px">
             <div class="card">
               <h3 data-i18n="feature1Title">Карты раскроя</h3>
-              <p data-i18n="feature1Text">Белые заготовки на цветном картоне, обрезь, пиктограмма слоя, цвет и профиль.</p>
+              <p data-i18n="feature1Text">Белые заготовки на цветном картоне, обрезь, пиктограмма слоя, цвет, профиль и название оборудования, на котором построен раскрой.</p>
             </div>
             <div class="card">
               <h3 data-i18n="feature2Title">Гофроящики</h3>
@@ -731,7 +762,7 @@ html[data-theme="day"] .smart-related-card,html.day-theme .smart-related-card{ba
             </div>
             <div class="card">
               <h3 data-i18n="feature4Title">SQL и Excel</h3>
-              <p data-i18n="feature4Text">Рабочая версия хранит данные в SQL Server, импортирует заказы и фактические планы из Excel.</p>
+              <p data-i18n="feature4Text">Рабочая версия хранит данные в SQL Server, импортирует заказы и фактические планы из Excel, включая рилевки и перерабатывающее оборудование.</p>
             </div>
           </div>
         </div>
@@ -741,13 +772,13 @@ html[data-theme="day"] .smart-related-card,html.day-theme .smart-related-card{ba
     <section id="planning-params">
       <div class="wrap section-head">
         <h2 data-i18n="paramsTitle">Параметры, которые влияют на план</h2>
-        <p data-i18n="paramsText">Форматы полотна, продольные и поперечные резы, скорость, перенастройки, рабочий день, субботы/воскресенья, интервалы ППР, пороги обрези и правила обработки просроченных заказов.</p>
+        <p data-i18n="paramsText">Оборудование и доступные для него форматы, продольные и поперечные резы, скорость, перенастройки, рабочий день, интервалы ППР, пороги обрези и правила обработки просроченных заказов.</p>
       </div>
       <div class="wrap showcase">
         <div>
           <div class="steps">
-            <div class="card step"><h3 data-i18n="step1Title">Заказы</h3><p data-i18n="step1Text">Импортируйте или создайте заказы, выберите заказчика и тип заготовки.</p></div>
-            <div class="card step"><h3 data-i18n="step2Title">Оборудование</h3><p data-i18n="step2Text">Задайте форматы, резы, скорость и время перенастройки.</p></div>
+            <div class="card step"><h3 data-i18n="step1Title">Заказы</h3><p data-i18n="step1Text">Импортируйте или создайте заказы; при необходимости укажите рилевки и перерабатывающее оборудование.</p></div>
+            <div class="card step"><h3 data-i18n="step2Title">Оборудование</h3><p data-i18n="step2Text">Ведите общий справочник оборудования и его форматов, выбирайте машины для расчета и при необходимости включайте режим без перемешивания.</p></div>
             <div class="card step"><h3 data-i18n="step3Title">Календарь</h3><p data-i18n="step3Text">Укажите дату старта, рабочее время, выходные и интервалы ППР.</p></div>
             <div class="card step"><h3 data-i18n="step4Title">Расчет</h3><p data-i18n="step4Text">Получите план раскроя, карту, сводку, Excel-отчеты и сравнение с фактом.</p></div>
           </div>
@@ -791,7 +822,7 @@ html[data-theme="day"] .smart-related-card,html.day-theme .smart-related-card{ba
       <div class="wrap report-grid">
         <div class="screen">
           <img src="assets/report-cutting.png" alt="Excel-отчет OptCutting по раскроям гофрокартона" loading="lazy">
-          <div class="caption" data-i18n="report1">Раскрои: серии, заказы, полотна, примечания.</div>
+          <div class="caption" data-i18n="report1">Раскрои: оборудование, серии, заказы, размеры, полотна, рилевки и перерабатывающее оборудование; примечание выводится последним.</div>
         </div>
         <div class="screen">
           <img src="assets/report-gantt.png" alt="Сетевой график OptCutting в виде диаграммы Ганта" loading="lazy">
@@ -833,9 +864,22 @@ html[data-theme="day"] .smart-related-card,html.day-theme .smart-related-card{ba
     <section id="news">
       <div class="wrap section-head">
         <h2 data-i18n="newsTitle">Новости OptCutting</h2>
-        <p data-i18n="newsIntro">Ключевые изменения, появившиеся после версии 1.0: точнее расчет, быстрее подготовка заказов и удобнее работа на производстве.</p>
+        <p data-i18n="newsIntro">Последние изменения делают планирование на нескольких машинах точнее, а производственные отчеты — информативнее.</p>
       </div>
       <div class="wrap news-grid">
+        <article class="card release latest">
+          <div class="release-kicker" data-i18n="news132Kicker">Обновление 1.32 готово</div>
+          <h3 data-i18n="news132Title">Новое в версии 1.32</h3>
+          <p data-i18n="news132Text">Обновление расширяет работу с оборудованием, заказами и совместными раскроями.</p>
+          <ul class="release-list">
+            <li data-i18n="news132Item1">Добавлен справочник «Список оборудования»: для каждой машины задаются наименование и несколько доступных форматов.</li>
+            <li data-i18n="news132Item2">В расчет выбирается нужное оборудование из общего списка; доступен режим последовательной работы без перемешивания оборудования и форматов.</li>
+            <li data-i18n="news132Item3">Название оборудования выводится в таблице раскроя, Excel-отчете и на карте раскроя.</li>
+            <li data-i18n="news132Item4">В заказ добавлены поля «Рилевки» и «Перерабатывающее оборудование» с импортом из Excel или SQL и выводом в отчет.</li>
+            <li data-i18n="news132Item5">Исправлен расчет количества заготовок в совместном раскрое при разных длинах: результат теперь считается отдельно для каждого заказа.</li>
+            <li data-i18n="news132Item6">Поля каждого заказа сгруппированы в отчете, примечание перенесено в последний столбец, а подписи карты раскроя автоматически получают достаточно места.</li>
+          </ul>
+        </article>
         <article class="card release">
           <h3 data-i18n="news15Title">Полный контроль обрези</h3>
           <p data-i18n="news15Text">Добавлены минимальная обрезь и настройка учета непроклейки. Неподходящие раскрои получают штраф, а при отключенном ограничении подсвечиваются красным.</p>
@@ -878,7 +922,7 @@ html[data-theme="day"] .smart-related-card,html.day-theme .smart-related-card{ba
     <section id="pricing">
       <div class="wrap section-head">
         <h2 data-i18n="pricingTitle">Стартовые цены</h2>
-        <p data-i18n="pricingText">Цена снижена для первых внедрений: программа новая, и реальные кейсы помогут быстрее довести ее до стабильной версии 1.0.</p>
+        <p data-i18n="pricingText">Цена снижена для первых внедрений. Версия 1.32 уже включает справочник оборудования, последовательное планирование по машинам и форматам и расширенные данные заказов.</p>
       </div>
       <div class="wrap pricing">
         <div class="card price">
@@ -1088,7 +1132,16 @@ html[data-theme="day"] .smart-related-card,html.day-theme .smart-related-card{ba
           multiNote: "Если нужен другой язык, можно самостоятельно создать словарь перевода для любого языка и подключить его к программе.",
           mainCaption: "Главное окно: заказы, карта раскроя, сводка и серии.",
           newsTitle: "Новости OptCutting",
-          newsIntro: "Ключевые изменения, появившиеся после версии 1.0: точнее расчет, быстрее подготовка заказов и удобнее работа на производстве.",
+          newsIntro: "Последние изменения делают планирование на нескольких машинах точнее, а производственные отчеты — информативнее.",
+          news132Kicker: "Обновление 1.32 готово",
+          news132Title: "Новое в версии 1.32",
+          news132Text: "Обновление расширяет работу с оборудованием, заказами и совместными раскроями.",
+          news132Item1: "Добавлен справочник «Список оборудования»: для каждой машины задаются наименование и несколько доступных форматов.",
+          news132Item2: "В расчет выбирается нужное оборудование из общего списка; доступен режим последовательной работы без перемешивания оборудования и форматов.",
+          news132Item3: "Название оборудования выводится в таблице раскроя, Excel-отчете и на карте раскроя.",
+          news132Item4: "В заказ добавлены поля «Рилевки» и «Перерабатывающее оборудование» с импортом из Excel или SQL и выводом в отчет.",
+          news132Item5: "Исправлен расчет количества заготовок в совместном раскрое при разных длинах: результат теперь считается отдельно для каждого заказа.",
+          news132Item6: "Поля каждого заказа сгруппированы в отчете, примечание перенесено в последний столбец, а подписи карты раскроя автоматически получают достаточно места.",
           news15Title: "Полный контроль обрези",
           news15Text: "Добавлены минимальная обрезь и настройка учета непроклейки. Неподходящие раскрои получают штраф, а при отключенном ограничении подсвечиваются красным.",
           news14Title: "Заказы и Excel без лишних действий",
@@ -1109,19 +1162,19 @@ html[data-theme="day"] .smart-related-card,html.day-theme .smart-related-card{ba
           news21Text: "Деловой отход выделяется отдельным цветом; его насыщенность зависит от коэффициента снижения стоимости отхода.",
           featuresTitle: "Основные возможности",
           feature1Title: "Карты раскроя",
-          feature1Text: "Белые заготовки на цветном картоне, обрезь, пиктограмма слоя, цвет и профиль.",
+          feature1Text: "Белые заготовки на цветном картоне, обрезь, пиктограмма слоя, цвет, профиль и название оборудования, на котором построен раскрой.",
           feature2Title: "Гофроящики",
           feature2Text: "Расчет заготовки по внутренним размерам ящика, настраиваемым коэффициентам и биговочные линии на карте.",
           feature3Title: "Совместимость марок",
           feature3Text: "Повышение марки оценивается через метод эквивалентной обрези.",
           feature4Title: "SQL, Lite и Excel",
-          feature4Text: "Рабочая версия хранит данные в SQL Server; Lite-версия работает без него. Заказы и фактические планы импортируются из Excel.",
+          feature4Text: "Рабочая версия хранит данные в SQL Server; Lite-версия работает без него. При импорте из Excel или SQL загружаются также рилевки и перерабатывающее оборудование.",
           paramsTitle: "Параметры, которые влияют на план",
-          paramsText: "Форматы полотна, продольные и поперечные резы, скорость, перенастройки, рабочий день, субботы/воскресенья, интервалы ППР, минимальная и максимальная обрезь, учет непроклейки и правила обработки просроченных заказов.",
+          paramsText: "Оборудование и доступные для него форматы, продольные и поперечные резы, скорость, перенастройки, рабочий день, интервалы ППР, минимальная и максимальная обрезь, учет непроклейки и правила обработки просроченных заказов.",
           step1Title: "Заказы",
-          step1Text: "Импортируйте или создайте заказы, выберите заказчика и тип заготовки.",
+          step1Text: "Импортируйте или создайте заказы; при необходимости укажите рилевки и перерабатывающее оборудование.",
           step2Title: "Оборудование",
-          step2Text: "Задайте форматы, резы, скорость и время перенастройки.",
+          step2Text: "Ведите общий справочник оборудования и его форматов, выбирайте машины для расчета и при необходимости включайте режим без перемешивания.",
           step3Title: "Календарь",
           step3Text: "Укажите дату старта, рабочее время, выходные и интервалы ППР.",
           step4Title: "Расчет",
@@ -1137,11 +1190,11 @@ html[data-theme="day"] .smart-related-card,html.day-theme .smart-related-card{ba
           actual3Text: "После оптимизации программа добавляет сравнение фактического и расчетного плана в Excel и формирует отдельный Word-отчет.",
           reportsTitle: "Отчеты для производства и руководителя",
           reportsText: "Файлы Excel открываются автоматически и сохраняют цветовую подсветку: опоздания, повышение марки, частично скроенные и нескроенные заказы. Для фактического плана доступен отдельный Word-отчет сравнения.",
-          report1: "Раскрои: серии, номера заказов, номера клиента, размеры и полотна.",
+          report1: "Раскрои: оборудование, серии, заказы, размеры, полотна, рилевки и перерабатывающее оборудование; примечание выводится последним.",
           report2: "Сетевой график: диаграмма Ганта работы гофроагрегата.",
           report3: "Потребность: марки картона, отход, деловой отход, стоимость.",
           pricingTitle: "Стартовые цены",
-          pricingText: "Цена снижена для первых внедрений. Версия 1.5 уже включает расчет гофроящиков, расширенную работу с заказами и контроль обрези; реальные кейсы помогают развивать программу дальше.",
+          pricingText: "Цена снижена для первых внедрений. Версия 1.32 уже включает справочник оборудования, последовательное планирование по машинам и форматам и расширенные данные заказов.",
           priceBuyTitle: "Бессрочная лицензия",
           priceBuy: "99 000 ₽",
           priceBuyText: "Для предприятия, которое хочет сразу закрепить право использования.",
@@ -1218,7 +1271,16 @@ html[data-theme="day"] .smart-related-card,html.day-theme .smart-related-card{ba
           multiNote: "If another language is needed, you can create your own translation dictionary for any language and connect it to the program.",
           mainCaption: "Main window: orders, cutting map, summary and cutting series.",
           newsTitle: "OptCutting news",
-          newsIntro: "Key improvements since version 1.0: more precise calculations, faster order preparation and smoother production work.",
+          newsIntro: "The latest changes make multi-machine planning more accurate and production reports more informative.",
+          news132Kicker: "Update 1.32 is ready",
+          news132Title: "What is new in version 1.32",
+          news132Text: "This update expands equipment, order and combined-cutting workflows.",
+          news132Item1: "A new Equipment List catalog stores each machine name and several available web widths.",
+          news132Item2: "Select the required equipment from the shared list and optionally run machines and formats sequentially without intermixing.",
+          news132Item3: "The equipment name is shown in the cutting table, Excel report and cutting map.",
+          news132Item4: "Orders now include Creases and Processing equipment fields, imported from Excel or SQL and included in reports.",
+          news132Item5: "Blank quantities in combined cuts with different blank lengths are now calculated separately for each order.",
+          news132Item6: "Each order's columns are grouped in the report, Notes is the last column, and cutting-map labels automatically receive enough space.",
           news15Title: "Full trim-waste control",
           news15Text: "Added a minimum trim-waste limit and a setting for including the unglued area. Unsuitable cutting plans receive a penalty or are highlighted in red.",
           news14Title: "Orders and Excel with fewer steps",
@@ -1239,19 +1301,19 @@ html[data-theme="day"] .smart-related-card,html.day-theme .smart-related-card{ba
           news21Text: "Reusable waste has its own color on the cutting map; its saturation depends on the waste cost-reduction coefficient.",
           featuresTitle: "Core features",
           feature1Title: "Cutting maps",
-          feature1Text: "White blanks on colored board, trim waste, layer icon, color and flute profile.",
+          feature1Text: "White blanks on colored board, trim waste, layer icon, color, flute profile and the equipment name used for the cutting plan.",
           feature2Title: "Corrugated boxes",
           feature2Text: "Blank size calculation from inner box dimensions, adjustable coefficients and crease lines on the map.",
           feature3Title: "Grade compatibility",
           feature3Text: "Grade upgrades are evaluated using equivalent trim waste.",
           feature4Title: "SQL, Lite and Excel",
-          feature4Text: "The full version stores data in SQL Server; the Lite edition works without it. Orders and actual production plans are imported from Excel.",
+          feature4Text: "The full version stores data in SQL Server; the Lite edition works without it. Excel or SQL imports also read creases and processing equipment.",
           paramsTitle: "Planning parameters",
-          paramsText: "Web widths, longitudinal and cross cuts, speed, setup time, working day, Saturdays/Sundays, maintenance intervals, minimum and maximum trim waste, unglued-area handling and overdue order rules.",
+          paramsText: "Equipment and its available web widths, longitudinal and cross cuts, speed, setup time, working day, maintenance intervals, minimum and maximum trim waste, unglued-area handling and overdue order rules.",
           step1Title: "Orders",
-          step1Text: "Import or create orders, select customer and blank type.",
+          step1Text: "Import or create orders and, when needed, enter creases and processing equipment.",
           step2Title: "Equipment",
-          step2Text: "Set web widths, cuts, speed and setup time.",
+          step2Text: "Maintain a shared equipment-and-format catalog, select machines for calculation and optionally prevent equipment and format intermixing.",
           step3Title: "Calendar",
           step3Text: "Set start date, working hours, weekends and maintenance windows.",
           step4Title: "Calculate",
@@ -1267,11 +1329,11 @@ html[data-theme="day"] .smart-related-card,html.day-theme .smart-related-card{ba
           actual3Text: "After optimization, the program adds actual-vs-optimized comparison to Excel and generates a separate Word report.",
           reportsTitle: "Reports for production and management",
           reportsText: "Excel files open automatically and keep color highlighting: lateness, grade upgrades, partially cut and uncut orders. For actual plans, a separate Word comparison report is available.",
-          report1: "Cutting report: series, order numbers, customer numbers, dimensions and webs.",
+          report1: "Cutting report: equipment, series, orders, dimensions, webs, creases and processing equipment; Notes is the final column.",
           report2: "Network schedule: corrugator Gantt chart.",
           report3: "Material demand: board grades, waste, reusable waste and cost.",
           pricingTitle: "Introductory pricing",
-          pricingText: "The price is reduced for first deployments. Version 1.5 already includes corrugated-box calculation, expanded order tools and trim-waste control; real cases help the software keep improving.",
+          pricingText: "The price is reduced for first deployments. Version 1.32 includes the equipment catalog, sequential machine-and-format planning and expanded order data.",
           priceBuyTitle: "Perpetual license",
           priceBuy: "€990",
           priceBuyText: "For a company that wants to secure long-term usage rights.",
