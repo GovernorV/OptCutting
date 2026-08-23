@@ -898,6 +898,21 @@ html[data-theme="day"] .smart-related-card,html.day-theme .smart-related-card{ba
       </div>
       <div class="wrap news-grid">
         <article class="card release latest">
+          <div class="release-kicker" data-i18n="news140Kicker">Обновление 1.40 готово</div>
+          <h3 data-i18n="news140Title">Новое в версии 1.40</h3>
+          <p data-i18n="news140Text">Обновление добавляет учет сырья и сортов, расширенный импорт, новые параметры качества раскроев и понятную диагностику заказов.</p>
+          <ul class="release-list">
+            <li class="priority" data-i18n="news140Item1">Добавлен справочник сырья с кодом сырья, импортом из .xlsx, складскими остатками и пересчетом цены за 1 м2 или 1 кг.</li>
+            <li data-i18n="news140Item2">Добавлен справочник сортов картона: сорт привязывается к марке, составу сырья и расходу каждого компонента на 1 м2.</li>
+            <li data-i18n="news140Item3">В заказе можно выбрать сорт из списка сортов выбранной марки; при импорте сорт можно указывать в колонке Марка.</li>
+            <li data-i18n="news140Item4">Добавлена проверка достаточности сырья по заказам с сортами и отдельный отчет по потребному сырью.</li>
+            <li data-i18n="news140Item5">Добавлены параметры Мин. площадь, м2, Погр. кол-ва, % и Считать раскрой с деловым отходом хорошим.</li>
+            <li data-i18n="news140Item6">В таблицу раскроев добавлена колонка Площадь м2, а в список заказов и файл импорта — Примечания.</li>
+            <li data-i18n="news140Item7">Добавлены неразрывность марок, совместимость сортов, запоминание папки импорта и режим сохранения нескроившихся заказов при импорте.</li>
+            <li data-i18n="news140Item8">В примечания раскроя выводится деловой отход: N м2; добавлены новые образцы импорта заказов, сырья и сортов.</li>
+          </ul>
+        </article>
+        <article class="card release latest">
           <div class="release-kicker" data-i18n="news139Kicker">Обновление 1.39 готово</div>
           <h3 data-i18n="news139Title">Новое в версии 1.39</h3>
           <p data-i18n="news139Text">Обновление добавляет учет сырья и сортов картона, расширенный импорт и новую диагностику заказов.</p>
@@ -910,7 +925,7 @@ html[data-theme="day"] .smart-related-card,html.day-theme .smart-related-card{ba
             <li data-i18n="news139Item6">Отчет по сырью показывает потребность в м2 и тоннах, текущий запас и остаток после изготовления заказов.</li>
           </ul>
         </article>
-        <article class="card release">
+        <article class="card release latest">
           <div class="release-kicker" data-i18n="news132Kicker">Обновление 1.32 готово</div>
           <h3 data-i18n="news132Title">Новое в версии 1.32</h3>
           <p data-i18n="news132Text">Обновление расширяет работу с оборудованием, заказами и совместными раскроями.</p>
@@ -986,7 +1001,7 @@ html[data-theme="day"] .smart-related-card,html.day-theme .smart-related-card{ba
     <section id="pricing">
       <div class="wrap section-head">
         <h2 data-i18n="pricingTitle">Стартовые цены</h2>
-        <p data-i18n="pricingText">Цена снижена для первых внедрений. Версия 1.39 уже включает справочник оборудования, последовательное планирование по машинам и форматам, сырье, сорта картона и расширенную диагностику заказов.</p>
+        <p data-i18n="pricingText">Цена снижена для первых внедрений. Версия 1.40 уже включает справочник оборудования, последовательное планирование по машинам и форматам, сырье, сорта картона, контроль остатков и расширенную диагностику заказов.</p>
       </div>
       <div class="wrap pricing">
         <div class="card price">
@@ -1198,6 +1213,17 @@ html[data-theme="day"] .smart-related-card,html.day-theme .smart-related-card{ba
           mainCaption: "Главное окно: заказы, карта раскроя, сводка и серии.",
           newsTitle: "Новости OptCutting",
           newsIntro: "Последние изменения добавляют учет сырья и сортов, более точную диагностику заказов и информативные производственные отчеты.",
+          news140Kicker: "Обновление 1.40 готово",
+          news140Title: "Новое в версии 1.40",
+          news140Text: "Обновление добавляет учет сырья и сортов, расширенный импорт, новые параметры качества раскроев и понятную диагностику заказов.",
+          news140Item1: "Добавлен справочник сырья с кодом сырья, импортом из .xlsx, складскими остатками и пересчетом цены за 1 м2 или 1 кг.",
+          news140Item2: "Добавлен справочник сортов картона: сорт привязывается к марке, составу сырья и расходу каждого компонента на 1 м2.",
+          news140Item3: "В заказе можно выбрать сорт из списка сортов выбранной марки; при импорте сорт можно указывать в колонке Марка.",
+          news140Item4: "Добавлена проверка достаточности сырья по заказам с сортами и отдельный отчет по потребному сырью.",
+          news140Item5: "Добавлены параметры Мин. площадь, м2, Погр. кол-ва, % и Считать раскрой с деловым отходом хорошим.",
+          news140Item6: "В таблицу раскроев добавлена колонка Площадь м2, а в список заказов и файл импорта — Примечания.",
+          news140Item7: "Добавлены неразрывность марок, совместимость сортов, запоминание папки импорта и режим сохранения нескроившихся заказов при импорте.",
+          news140Item8: "В примечания раскроя выводится деловой отход: N м2; добавлены новые образцы импорта заказов, сырья и сортов.",
           news139Kicker: "Обновление 1.39 готово",
           news139Title: "Новое в версии 1.39",
           news139Text: "Обновление добавляет учет сырья и сортов картона, расширенный импорт и новую диагностику заказов.",
@@ -1286,7 +1312,7 @@ html[data-theme="day"] .smart-related-card,html.day-theme .smart-related-card{ba
           integrationTechCardTitle: "Техкарта",
           integrationTechCardText: "Передаёт данные заказа в ГофроТехкарту PRO для подготовки технологической карты.",
           pricingTitle: "Стартовые цены",
-          pricingText: "Цена снижена для первых внедрений. Версия 1.39 уже включает справочник оборудования, последовательное планирование по машинам и форматам, сырье, сорта картона и расширенную диагностику заказов.",
+          pricingText: "Цена снижена для первых внедрений. Версия 1.40 уже включает справочник оборудования, последовательное планирование по машинам и форматам, сырье, сорта картона, контроль остатков и расширенную диагностику заказов.",
           priceBuyTitle: "Бессрочная лицензия",
           priceBuy: "99 000 ₽",
           priceBuyText: "Для предприятия, которое хочет сразу закрепить право использования.",
@@ -1365,6 +1391,17 @@ html[data-theme="day"] .smart-related-card,html.day-theme .smart-related-card{ba
           mainCaption: "Main window: orders, cutting map, summary and cutting series.",
           newsTitle: "OptCutting news",
           newsIntro: "The latest changes add raw-material and board-sort control, more precise order diagnostics and more informative production reports.",
+          news140Kicker: "Update 1.40 is ready",
+          news140Title: "What is new in version 1.40",
+          news140Text: "This update adds raw-material and board-sort accounting, expanded import, new cut-quality settings and clearer order diagnostics.",
+          news140Item1: "Raw Materials now include material codes, .xlsx import, stock balances and recalculation of the price per m2 or per kg.",
+          news140Item2: "Board Sorts now link a sort to its grade, raw-material composition and component consumption per 1 m2.",
+          news140Item3: "An order can choose a sort from the selected grade list; imports may specify the sort in the Grade column.",
+          news140Item4: "Stock sufficiency checks for sorted orders and a separate raw-material demand report were added.",
+          news140Item5: "New plan settings: Min. area, m2, Quantity tolerance, % and Treat cuts with reusable waste as good.",
+          news140Item6: "The cutting table now includes Area m2; the order list and order import file include Notes.",
+          news140Item7: "Added grade continuity, sort compatibility, last import folder memory and keeping uncut orders during import.",
+          news140Item8: "Cut notes show reusable waste: N m2; new import samples for orders, raw materials and sorts were added.",
           news139Kicker: "Update 1.39 is ready",
           news139Title: "What is new in version 1.39",
           news139Text: "This update adds raw-material and board-sort control, expanded import and new order diagnostics.",
@@ -1453,7 +1490,7 @@ html[data-theme="day"] .smart-related-card,html.day-theme .smart-related-card{ba
           integrationTechCardTitle: "Tech Card",
           integrationTechCardText: "Sends order data to GofroTechCard PRO to prepare a technical card.",
           pricingTitle: "Introductory pricing",
-          pricingText: "The price is reduced for first deployments. Version 1.39 includes the equipment catalog, sequential machine-and-format planning, raw materials, board sorts and expanded order diagnostics.",
+          pricingText: "The price is reduced for first deployments. Version 1.40 includes the equipment catalog, sequential machine-and-format planning, raw materials, board sorts, stock checks and expanded order diagnostics.",
           priceBuyTitle: "Perpetual license",
           priceBuy: "€990",
           priceBuyText: "For a company that wants to secure long-term usage rights.",
